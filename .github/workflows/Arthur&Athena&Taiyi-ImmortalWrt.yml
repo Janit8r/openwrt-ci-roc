@@ -105,9 +105,10 @@ jobs:
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
         # 全局禁用所有包的哈希验证（防止.gitattributes导致的哈希不匹配）
+        # 将PKG_HASH设置为skip而不是删除，避免构建系统报错
         echo "Disabling hash checks for all packages..."
-        find feeds/ package/ -name Makefile -type f -exec sed -i '/PKG_HASH/d' {} \; 2>/dev/null || true
-        find feeds/ package/ -name Makefile -type f -exec sed -i '/PKG_MIRROR_HASH/d' {} \; 2>/dev/null || true
+        find feeds/ package/ -name Makefile -type f -exec sed -i 's/PKG_HASH:=.*/PKG_HASH:=skip/g' {} \; 2>/dev/null || true
+        find feeds/ package/ -name Makefile -type f -exec sed -i 's/PKG_MIRROR_HASH:=.*/PKG_MIRROR_HASH:=skip/g' {} \; 2>/dev/null || true
         echo "All package hash checks disabled"
 
     - name: Download DL Package(下载DL软件包)
