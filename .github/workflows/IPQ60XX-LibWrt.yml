@@ -110,7 +110,9 @@ jobs:
         cat $CONFIG_FILE $GENERAL_CONFIG_FILE > $OPENWRT_PATH/.config
         cd $OPENWRT_PATH
         make defconfig
-        make download -j$(nproc)
+        make download -j8 V=s || make download -j1 V=s || true
+        find dl -size 0 -exec rm -f {} \;
+        echo "Download completed, some packages may have failed but will retry during compilation"
 
     - name: Compile Firmware(开始编译固件)
       id: compile
