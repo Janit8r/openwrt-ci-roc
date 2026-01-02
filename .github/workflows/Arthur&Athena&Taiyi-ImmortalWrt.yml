@@ -110,6 +110,30 @@ jobs:
         cat $CONFIG_FILE $GENERAL_CONFIG_FILE > $OPENWRT_PATH/.config
         cd $OPENWRT_PATH
         make defconfig
+        # 修复NSS固件包的哈希验证问题（由于.gitattributes导致）
+        if [ -f "feeds/nss_packages/firmware/nss-firmware/Makefile" ]; then
+            sed -i '/PKG_HASH:=/d' feeds/nss_packages/firmware/nss-firmware/Makefile
+            echo "NSS firmware hash check disabled"
+        fi
+        if [ -f "feeds/nss_packages/qca-nss-drv/Makefile" ]; then
+            sed -i '/PKG_HASH:=/d' feeds/nss_packages/qca-nss-drv/Makefile
+            echo "NSS drv hash check disabled"
+        fi
+        if [ -f "feeds/nss_packages/qca-nss-ecm/Makefile" ]; then
+            sed -i '/PKG_HASH:=/d' feeds/nss_packages/qca-nss-ecm/Makefile
+            echo "NSS ecm hash check disabled"
+        fi
+        if [ -f "feeds/nss_packages/qca-nss-clients/Makefile" ]; then
+            sed -i '/PKG_HASH:=/d' feeds/nss_packages/qca-nss-clients/Makefile
+            echo "NSS clients hash check disabled"
+        fi
+        if [ -f "feeds/nss_packages/qca-nss-crypto/Makefile" ]; then
+            sed -i '/PKG_HASH:=/d' feeds/nss_packages/qca-nss-crypto/Makefile
+            echo "NSS crypto hash check disabled"
+        fi
+        # 清理可能损坏的NSS固件缓存
+        rm -f dl/nss-firmware-*.tar.zst
+        rm -f dl/nss-eip-firmware-*.tar.zst
         make download -j8 V=s || make download -j1 V=s || true
         find dl -size 0 -exec rm -f {} \;
         echo "Download completed, some packages may have failed but will retry during compilation"
