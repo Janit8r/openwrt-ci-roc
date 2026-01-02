@@ -1,116 +1,114 @@
-﻿2026-01-02T03:16:14.7304923Z ##[group]Run chmod +x $DIY_SCRIPT
-2026-01-02T03:16:14.7305418Z [36;1mchmod +x $DIY_SCRIPT[0m
-2026-01-02T03:16:14.7306040Z [36;1mcd $OPENWRT_PATH[0m
-2026-01-02T03:16:14.7306432Z [36;1m$GITHUB_WORKSPACE/$DIY_SCRIPT[0m
-2026-01-02T03:16:14.7348501Z shell: /usr/bin/bash -e {0}
-2026-01-02T03:16:14.7348733Z env:
-2026-01-02T03:16:14.7348982Z   REPO_URL: https://github.com/laipeng668/immortalwrt.git
-2026-01-02T03:16:14.7349468Z   REPO_BRANCH: openwrt-25.12
-2026-01-02T03:16:14.7349722Z   CONFIG_FILE: configs/Arthur&Athena&Taiyi.config
-2026-01-02T03:16:14.7350000Z   GENERAL_CONFIG_FILE: configs/General.config
-2026-01-02T03:16:14.7350259Z   DIY_SCRIPT: scripts/Roc-script.sh
-2026-01-02T03:16:14.7350485Z   CLASH_KERNEL: amd64
-2026-01-02T03:16:14.7350664Z   UPLOAD_BIN_DIR: false
-2026-01-02T03:16:14.7350851Z   FIRMWARE_RELEASE: true
-2026-01-02T03:16:14.7351045Z   FIRMWARE_TAG: Arthur&Athena&Taiyi
-2026-01-02T03:16:14.7351254Z   TZ: Asia/Shanghai
-2026-01-02T03:16:14.7351435Z   OPENWRT_PATH: /mnt/openwrt
-2026-01-02T03:16:14.7352391Z   VERSION_INFO: 作者: Roc Lai<br/>时间: 2026-01-01<br/>内容: Personal Tailor (qualcommax)<br/>hash: ac9652ded7f5fcef23f5b6cdbfead28cf9ed6727
-2026-01-02T03:16:14.7353269Z   VERSION_KERNEL: 6.12.62
-2026-01-02T03:16:14.7353643Z   SOURCE_REPO: immortalwrt.git
-2026-01-02T03:16:14.7354040Z   DEVICE_TARGET: qualcommax
-2026-01-02T03:16:14.7354251Z   DEVICE_SUBTARGET: ipq60xx
-2026-01-02T03:16:14.7354470Z   HASH: ac9652d
-2026-01-02T03:16:14.7354644Z   CACHE_DATE: 2026-01-02 11:15:21
-2026-01-02T03:16:14.7354849Z ##[endgroup]
-2026-01-02T03:16:14.7777531Z Updating feed 'nss_packages' from 'https://github.com/qosmio/nss-packages.git' ...
-2026-01-02T03:16:15.0895515Z Already up to date.
-2026-01-02T03:16:15.1116277Z Create index file './feeds/nss_packages.index' 
-2026-01-02T03:16:41.4730618Z Updating feed 'sqm_scripts_nss' from 'https://github.com/qosmio/sqm-scripts-nss.git' ...
-2026-01-02T03:16:41.8005303Z Already up to date.
-2026-01-02T03:16:41.8227387Z Create index file './feeds/sqm_scripts_nss.index' 
-2026-01-02T03:17:04.2679890Z WARNING: Makefile 'package/feeds/telephony/asterisk/Makefile' has a dependency on 'uw-imap', which does not exist
-2026-01-02T03:17:04.3302142Z WARNING: Makefile 'package/feeds/packages/onionshare-cli/Makefile' has a dependency on 'python3-pysocks', which does not exist
-2026-01-02T03:17:04.3303726Z WARNING: Makefile 'package/feeds/packages/onionshare-cli/Makefile' has a dependency on 'python3-unidecode', which does not exist
-2026-01-02T03:17:06.8829203Z Installing all packages from feed nss_packages.
-2026-01-02T03:17:13.0396511Z WARNING: Makefile 'package/feeds/telephony/asterisk/Makefile' has a dependency on 'uw-imap', which does not exist
-2026-01-02T03:17:13.0980729Z WARNING: Makefile 'package/feeds/packages/onionshare-cli/Makefile' has a dependency on 'python3-pysocks', which does not exist
-2026-01-02T03:17:13.0982304Z WARNING: Makefile 'package/feeds/packages/onionshare-cli/Makefile' has a dependency on 'python3-unidecode', which does not exist
-2026-01-02T03:17:15.5895997Z Installing all packages from feed sqm_scripts_nss.
-2026-01-02T03:17:15.6462744Z Cloning into 'packages'...
-2026-01-02T03:17:16.9240479Z Cloning into 'packages'...
-2026-01-02T03:17:18.2028786Z Cloning into 'luci'...
-2026-01-02T03:17:19.6420451Z Cloning into 'packages'...
-2026-01-02T03:17:20.8981030Z Cloning into 'luci'...
-2026-01-02T03:17:22.3234530Z Cloning into 'packages'...
-2026-01-02T03:17:23.4252020Z Cloning into 'feeds/luci/themes/luci-theme-argon'...
-2026-01-02T03:17:24.0363268Z Cloning into 'feeds/luci/applications/luci-app-argon-config'...
-2026-01-02T03:17:24.5077989Z Cloning into 'feeds/luci/themes/luci-theme-aurora'...
-2026-01-02T03:17:25.1212837Z Cloning into 'feeds/luci/applications/luci-app-aurora-config'...
-2026-01-02T03:17:25.6097160Z Cloning into 'feeds/packages/lang/golang'...
-2026-01-02T03:17:26.0998364Z Cloning into 'package/openlist2'...
-2026-01-02T03:17:26.6118249Z Cloning into 'package/luci-app-lucky'...
-2026-01-02T03:17:27.1543346Z Cloning into 'package/luci-app-wechatpush'...
-2026-01-02T03:17:27.6707255Z Cloning into 'package/OpenAppFilter'...
-2026-01-02T03:17:28.3518095Z Cloning into 'package/openwrt-gecoosac'...
-2026-01-02T03:17:28.7988497Z Cloning into 'package/luci-app-athena-led'...
-2026-01-02T03:17:29.4796001Z Cloning into 'package/passwall-packages'...
-2026-01-02T03:17:30.0417430Z Cloning into 'package/luci-app-passwall'...
-2026-01-02T03:17:30.7045366Z Cloning into 'package/luci-app-passwall2'...
-2026-01-02T03:17:31.3116482Z Cloning into 'package/luci-app-openclash'...
-2026-01-02T03:17:32.6831586Z Updating feed 'nss_packages' from 'https://github.com/qosmio/nss-packages.git' ...
-2026-01-02T03:17:33.0180461Z Already up to date.
-2026-01-02T03:17:33.0400497Z Updating feed 'sqm_scripts_nss' from 'https://github.com/qosmio/sqm-scripts-nss.git' ...
-2026-01-02T03:17:33.3614482Z Already up to date.
-2026-01-02T03:17:33.3832768Z Updating feed 'packages' from 'https://github.com/immortalwrt/packages.git;openwrt-25.12' ...
-2026-01-02T03:17:33.6990068Z Already up to date.
-2026-01-02T03:17:33.7222619Z Updating feed 'luci' from 'https://github.com/immortalwrt/luci.git;openwrt-25.12' ...
-2026-01-02T03:17:34.0752800Z Already up to date.
-2026-01-02T03:17:34.0998782Z Updating feed 'routing' from 'https://github.com/openwrt/routing.git;openwrt-25.12' ...
-2026-01-02T03:17:34.4128591Z Already up to date.
-2026-01-02T03:17:34.4347355Z Updating feed 'telephony' from 'https://github.com/openwrt/telephony.git;openwrt-25.12' ...
-2026-01-02T03:17:34.7805586Z Already up to date.
-2026-01-02T03:17:34.8026262Z Updating feed 'video' from 'https://github.com/openwrt/video.git;openwrt-25.12' ...
-2026-01-02T03:17:35.1399791Z Already up to date.
-2026-01-02T03:17:35.1620437Z Create index file './feeds/nss_packages.index' 
-2026-01-02T03:17:35.4179394Z Create index file './feeds/sqm_scripts_nss.index' 
-2026-01-02T03:17:35.6668480Z Create index file './feeds/packages.index' 
-2026-01-02T03:17:36.0623025Z [M
-2026-01-02T03:17:36.4140118Z Collecting package info: feeds/packages/lang/golang/golang[M
-2026-01-02T03:17:36.5880933Z Collecting package info: feeds/packages/net/frp[M
-2026-01-02T03:17:36.6013651Z Collecting package info: feeds/packages/utils/watchcat[M
-2026-01-02T03:17:36.6243511Z Collecting package info: merging...[M
-2026-01-02T03:17:36.6262813Z 
-2026-01-02T03:17:36.7769669Z Collecting package info: doneCreate index file './feeds/luci.index' 
-2026-01-02T03:17:37.0222785Z [M
-2026-01-02T03:17:37.0314973Z Collecting package info: feeds/luci/applications/luci-app-argon-config[M
-2026-01-02T03:17:37.0497949Z Collecting package info: feeds/luci/applications/luci-app-aurora-config[M
-2026-01-02T03:17:37.0618548Z Collecting package info: feeds/luci/applications/luci-app-frpc[M
-2026-01-02T03:17:37.1032079Z Collecting package info: feeds/luci/applications/luci-app-frps[M
-2026-01-02T03:17:37.1164855Z Collecting package info: feeds/luci/applications/luci-app-watchcat[M
-2026-01-02T03:17:37.1246178Z Collecting package info: feeds/luci/collections/luci[M
-2026-01-02T03:17:37.1326579Z Collecting package info: feeds/luci/collections/luci-lib-docker[M
-2026-01-02T03:17:37.1407789Z Collecting package info: feeds/luci/collections/luci-light[M
-2026-01-02T03:17:37.1487924Z Collecting package info: feeds/luci/collections/luci-nginx[M
-2026-01-02T03:17:37.1568491Z Collecting package info: feeds/luci/collections/luci-ssl[M
-2026-01-02T03:17:37.1785255Z Collecting package info: feeds/luci/collections/luci-ssl-openssl[M
-2026-01-02T03:17:37.1866409Z Collecting package info: feeds/luci/themes/luci-theme-argon[M
-2026-01-02T03:17:37.1957004Z Collecting package info: feeds/luci/themes/luci-theme-aurora[M
-2026-01-02T03:17:37.2057570Z Collecting package info: merging...[M
-2026-01-02T03:17:37.2076906Z 
-2026-01-02T03:17:37.3677947Z Collecting package info: doneCreate index file './feeds/routing.index' 
-2026-01-02T03:17:37.6224475Z Create index file './feeds/telephony.index' 
-2026-01-02T03:17:37.8841827Z Create index file './feeds/video.index' 
-2026-01-02T03:17:58.7898448Z WARNING: Makefile 'package/feeds/telephony/asterisk/Makefile' has a dependency on 'uw-imap', which does not exist
-2026-01-02T03:17:58.8385279Z WARNING: Makefile 'package/luci-app-wechatpush/Makefile' has a dependency on 'wrtbwmon', which does not exist
-2026-01-02T03:17:58.8492331Z WARNING: Makefile 'package/feeds/packages/onionshare-cli/Makefile' has a dependency on 'python3-pysocks', which does not exist
-2026-01-02T03:17:58.8494802Z WARNING: Makefile 'package/feeds/packages/onionshare-cli/Makefile' has a dependency on 'python3-unidecode', which does not exist
-2026-01-02T03:18:04.0166825Z Installing package 'luci-app-aurora-config' from luci
-2026-01-02T03:18:04.0167702Z Installing all packages from feed nss_packages.
-2026-01-02T03:18:04.0168380Z Installing all packages from feed sqm_scripts_nss.
-2026-01-02T03:18:04.0169056Z Installing all packages from feed packages.
-2026-01-02T03:18:04.0169649Z Installing all packages from feed luci.
-2026-01-02T03:18:04.3389199Z Installing package 'luci-theme-aurora' from luci
-2026-01-02T03:18:04.5323124Z Installing all packages from feed routing.
-2026-01-02T03:18:04.5323699Z Installing all packages from feed telephony.
-2026-01-02T03:18:04.5324124Z Installing all packages from feed video.
+﻿2026-01-02T08:22:06.0962609Z ##[group]Run chmod +x $DIY_SCRIPT
+2026-01-02T08:22:06.0962927Z [36;1mchmod +x $DIY_SCRIPT[0m
+2026-01-02T08:22:06.0963147Z [36;1mcd $OPENWRT_PATH[0m
+2026-01-02T08:22:06.0963371Z [36;1m$GITHUB_WORKSPACE/$DIY_SCRIPT[0m
+2026-01-02T08:22:06.1000465Z shell: /usr/bin/bash -e {0}
+2026-01-02T08:22:06.1000689Z env:
+2026-01-02T08:22:06.1000924Z   REPO_URL: https://github.com/laipeng668/openwrt-6.x.git
+2026-01-02T08:22:06.1001232Z   REPO_BRANCH: main-nss
+2026-01-02T08:22:06.1001457Z   CONFIG_FILE: configs/IPQ60XX.config
+2026-01-02T08:22:06.1001724Z   GENERAL_CONFIG_FILE: configs/General.config
+2026-01-02T08:22:06.1002164Z   DIY_SCRIPT: scripts/Roc-script.sh
+2026-01-02T08:22:06.1002385Z   CLASH_KERNEL: amd64
+2026-01-02T08:22:06.1002578Z   UPLOAD_BIN_DIR: false
+2026-01-02T08:22:06.1002765Z   FIRMWARE_RELEASE: true
+2026-01-02T08:22:06.1002959Z   FIRMWARE_TAG: IPQ60XX
+2026-01-02T08:22:06.1003137Z   TZ: Asia/Shanghai
+2026-01-02T08:22:06.1003326Z   OPENWRT_PATH: /mnt/openwrt
+2026-01-02T08:22:06.1004062Z   VERSION_INFO: 作者: Roc Lai<br/>时间: 2026-01-01<br/>内容: mac80211: update rx_bitrate function signature; add qihoo_bootconfig_toggle_rootfs function; remove unused nowifi DTS files<br/>hash: a3fe5d4739eb68732ad9c29cb11787288079440f
+2026-01-02T08:22:06.1004849Z   VERSION_KERNEL: 6.12.62
+2026-01-02T08:22:06.1005062Z   SOURCE_REPO: openwrt-6.x.git
+2026-01-02T08:22:06.1005270Z   DEVICE_TARGET: qualcommax
+2026-01-02T08:22:06.1005471Z   DEVICE_SUBTARGET: ipq60xx
+2026-01-02T08:22:06.1005655Z   HASH: a3fe5d4
+2026-01-02T08:22:06.1005830Z   CACHE_DATE: 2026-01-02 16:21:12
+2026-01-02T08:22:06.1006035Z ##[endgroup]
+2026-01-02T08:22:06.1421259Z Updating feed 'nss_packages' from 'https://github.com/qosmio/nss-packages.git' ...
+2026-01-02T08:22:06.3512200Z Already up to date.
+2026-01-02T08:22:06.3733912Z Create index file './feeds/nss_packages.index' 
+2026-01-02T08:22:33.1362463Z Updating feed 'sqm_scripts_nss' from 'https://github.com/qosmio/sqm-scripts-nss.git' ...
+2026-01-02T08:22:33.3197215Z Already up to date.
+2026-01-02T08:22:33.3414932Z Create index file './feeds/sqm_scripts_nss.index' 
+2026-01-02T08:22:56.3351256Z WARNING: Makefile 'package/feeds/telephony/asterisk/Makefile' has a dependency on 'uw-imap', which does not exist
+2026-01-02T08:22:56.3937236Z WARNING: Makefile 'package/feeds/packages/onionshare-cli/Makefile' has a dependency on 'python3-pysocks', which does not exist
+2026-01-02T08:22:56.3941435Z WARNING: Makefile 'package/feeds/packages/onionshare-cli/Makefile' has a dependency on 'python3-unidecode', which does not exist
+2026-01-02T08:22:58.8913278Z Installing all packages from feed nss_packages.
+2026-01-02T08:23:05.1784983Z WARNING: Makefile 'package/feeds/telephony/asterisk/Makefile' has a dependency on 'uw-imap', which does not exist
+2026-01-02T08:23:05.2376815Z WARNING: Makefile 'package/feeds/packages/onionshare-cli/Makefile' has a dependency on 'python3-pysocks', which does not exist
+2026-01-02T08:23:05.2378022Z WARNING: Makefile 'package/feeds/packages/onionshare-cli/Makefile' has a dependency on 'python3-unidecode', which does not exist
+2026-01-02T08:23:07.7459742Z Installing all packages from feed sqm_scripts_nss.
+2026-01-02T08:23:07.8014310Z Cloning into 'packages'...
+2026-01-02T08:23:08.5647167Z Cloning into 'packages'...
+2026-01-02T08:23:09.3462058Z Cloning into 'luci'...
+2026-01-02T08:23:10.2583910Z Cloning into 'packages'...
+2026-01-02T08:23:11.0053464Z Cloning into 'luci'...
+2026-01-02T08:23:11.8591235Z Cloning into 'packages'...
+2026-01-02T08:23:12.4817314Z Cloning into 'feeds/luci/themes/luci-theme-argon'...
+2026-01-02T08:23:12.9285117Z Cloning into 'feeds/luci/applications/luci-app-argon-config'...
+2026-01-02T08:23:13.1643377Z Cloning into 'feeds/luci/themes/luci-theme-aurora'...
+2026-01-02T08:23:13.5267385Z Cloning into 'feeds/luci/applications/luci-app-aurora-config'...
+2026-01-02T08:23:13.7985442Z Cloning into 'feeds/packages/lang/golang'...
+2026-01-02T08:23:14.0321068Z Cloning into 'package/openlist2'...
+2026-01-02T08:23:14.3306678Z Cloning into 'package/luci-app-lucky'...
+2026-01-02T08:23:14.6201964Z Cloning into 'package/OpenAppFilter'...
+2026-01-02T08:23:15.1021517Z Cloning into 'package/openwrt-gecoosac'...
+2026-01-02T08:23:15.3527084Z Cloning into 'package/luci-app-athena-led'...
+2026-01-02T08:23:15.8032980Z Cloning into 'package/passwall-packages'...
+2026-01-02T08:23:16.1282633Z Cloning into 'package/luci-app-passwall'...
+2026-01-02T08:23:16.5527587Z Cloning into 'package/luci-app-passwall2'...
+2026-01-02T08:23:16.9740504Z Cloning into 'package/luci-app-openclash'...
+2026-01-02T08:23:18.1325011Z Updating feed 'nss_packages' from 'https://github.com/qosmio/nss-packages.git' ...
+2026-01-02T08:23:18.3103758Z Already up to date.
+2026-01-02T08:23:18.3323081Z Updating feed 'sqm_scripts_nss' from 'https://github.com/qosmio/sqm-scripts-nss.git' ...
+2026-01-02T08:23:18.5127192Z Already up to date.
+2026-01-02T08:23:18.5345732Z Updating feed 'packages' from 'https://github.com/immortalwrt/packages.git' ...
+2026-01-02T08:23:18.7288267Z Already up to date.
+2026-01-02T08:23:18.7521777Z Updating feed 'luci' from 'https://github.com/immortalwrt/luci.git' ...
+2026-01-02T08:23:18.9409200Z Already up to date.
+2026-01-02T08:23:18.9650639Z Updating feed 'routing' from 'https://github.com/openwrt/routing.git' ...
+2026-01-02T08:23:19.1517502Z Already up to date.
+2026-01-02T08:23:19.1736302Z Updating feed 'telephony' from 'https://github.com/openwrt/telephony.git' ...
+2026-01-02T08:23:19.3651734Z Already up to date.
+2026-01-02T08:23:19.3869620Z Updating feed 'video' from 'https://github.com/openwrt/video.git' ...
+2026-01-02T08:23:19.5714385Z Already up to date.
+2026-01-02T08:23:19.5932281Z Create index file './feeds/nss_packages.index' 
+2026-01-02T08:23:19.8499107Z Create index file './feeds/sqm_scripts_nss.index' 
+2026-01-02T08:23:20.1034515Z Create index file './feeds/packages.index' 
+2026-01-02T08:23:20.4968792Z [M
+2026-01-02T08:23:20.8469130Z Collecting package info: feeds/packages/lang/golang/golang[M
+2026-01-02T08:23:21.0184384Z Collecting package info: feeds/packages/net/frp[M
+2026-01-02T08:23:21.0315325Z Collecting package info: feeds/packages/utils/watchcat[M
+2026-01-02T08:23:21.0544868Z Collecting package info: merging...[M
+2026-01-02T08:23:21.0563819Z 
+2026-01-02T08:23:21.2068593Z Collecting package info: doneCreate index file './feeds/luci.index' 
+2026-01-02T08:23:21.4536215Z [M
+2026-01-02T08:23:21.4630020Z Collecting package info: feeds/luci/applications/luci-app-argon-config[M
+2026-01-02T08:23:21.4813534Z Collecting package info: feeds/luci/applications/luci-app-aurora-config[M
+2026-01-02T08:23:21.4934545Z Collecting package info: feeds/luci/applications/luci-app-frpc[M
+2026-01-02T08:23:21.5343922Z Collecting package info: feeds/luci/applications/luci-app-frps[M
+2026-01-02T08:23:21.5479664Z Collecting package info: feeds/luci/applications/luci-app-watchcat[M
+2026-01-02T08:23:21.5561146Z Collecting package info: feeds/luci/collections/luci[M
+2026-01-02T08:23:21.5641923Z Collecting package info: feeds/luci/collections/luci-lib-docker[M
+2026-01-02T08:23:21.5722675Z Collecting package info: feeds/luci/collections/luci-light[M
+2026-01-02T08:23:21.5803149Z Collecting package info: feeds/luci/collections/luci-nginx[M
+2026-01-02T08:23:21.5884587Z Collecting package info: feeds/luci/collections/luci-ssl[M
+2026-01-02T08:23:21.6103375Z Collecting package info: feeds/luci/collections/luci-ssl-openssl[M
+2026-01-02T08:23:21.6185236Z Collecting package info: feeds/luci/themes/luci-theme-argon[M
+2026-01-02T08:23:21.6278001Z Collecting package info: feeds/luci/themes/luci-theme-aurora[M
+2026-01-02T08:23:21.6380227Z Collecting package info: merging...[M
+2026-01-02T08:23:21.6399537Z 
+2026-01-02T08:23:21.8023578Z Collecting package info: doneCreate index file './feeds/routing.index' 
+2026-01-02T08:23:22.0615346Z Create index file './feeds/telephony.index' 
+2026-01-02T08:23:22.3271055Z Create index file './feeds/video.index' 
+2026-01-02T08:23:43.5519900Z WARNING: Makefile 'package/feeds/telephony/asterisk/Makefile' has a dependency on 'uw-imap', which does not exist
+2026-01-02T08:23:43.6099288Z WARNING: Makefile 'package/feeds/packages/onionshare-cli/Makefile' has a dependency on 'python3-pysocks', which does not exist
+2026-01-02T08:23:43.6100887Z WARNING: Makefile 'package/feeds/packages/onionshare-cli/Makefile' has a dependency on 'python3-unidecode', which does not exist
+2026-01-02T08:23:48.7661376Z Installing package 'luci-app-aurora-config' from luci
+2026-01-02T08:23:48.7661907Z Installing all packages from feed nss_packages.
+2026-01-02T08:23:48.7662317Z Installing all packages from feed sqm_scripts_nss.
+2026-01-02T08:23:48.7662697Z Installing all packages from feed packages.
+2026-01-02T08:23:48.7663039Z Installing all packages from feed luci.
+2026-01-02T08:23:49.0893424Z Installing package 'luci-theme-aurora' from luci
+2026-01-02T08:23:49.2825116Z Installing all packages from feed routing.
+2026-01-02T08:23:49.2825705Z Installing all packages from feed telephony.
+2026-01-02T08:23:49.2826171Z Installing all packages from feed video.

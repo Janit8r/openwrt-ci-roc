@@ -1,32 +1,32 @@
-﻿2026-01-02T03:15:21.8558484Z ##[group]Run actions/cache@main
-2026-01-02T03:15:21.8558736Z with:
-2026-01-02T03:15:21.8559060Z   key: immortalwrt.git-openwrt-25.12-qualcommax-ipq60xx-ac9652d 2026-01-02 11:15:21
-2026-01-02T03:15:21.8559534Z   restore-keys: immortalwrt.git-openwrt-25.12-qualcommax-ipq60xx-
-2026-01-02T03:15:21.8559911Z   path: /mnt/openwrt/.ccache
+﻿2026-01-02T08:21:12.9118188Z ##[group]Run actions/cache@main
+2026-01-02T08:21:12.9118592Z with:
+2026-01-02T08:21:12.9118890Z   key: openwrt-6.x.git-main-nss-qualcommax-ipq60xx-a3fe5d4 2026-01-02 16:21:12
+2026-01-02T08:21:12.9119330Z   restore-keys: openwrt-6.x.git-main-nss-qualcommax-ipq60xx-
+2026-01-02T08:21:12.9119690Z   path: /mnt/openwrt/.ccache
 /mnt/openwrt/staging_dir
 
-2026-01-02T03:15:21.8560199Z   enableCrossOsArchive: false
-2026-01-02T03:15:21.8560421Z   fail-on-cache-miss: false
-2026-01-02T03:15:21.8560626Z   lookup-only: false
-2026-01-02T03:15:21.8560830Z   save-always: false
-2026-01-02T03:15:21.8561000Z env:
-2026-01-02T03:15:21.8561216Z   REPO_URL: https://github.com/laipeng668/immortalwrt.git
-2026-01-02T03:15:21.8561514Z   REPO_BRANCH: openwrt-25.12
-2026-01-02T03:15:21.8561750Z   CONFIG_FILE: configs/Arthur&Athena&Taiyi.config
-2026-01-02T03:15:21.8562034Z   GENERAL_CONFIG_FILE: configs/General.config
-2026-01-02T03:15:21.8562290Z   DIY_SCRIPT: scripts/Roc-script.sh
-2026-01-02T03:15:21.8562513Z   CLASH_KERNEL: amd64
-2026-01-02T03:15:21.8562724Z   UPLOAD_BIN_DIR: false
-2026-01-02T03:15:21.8562914Z   FIRMWARE_RELEASE: true
-2026-01-02T03:15:21.8563108Z   FIRMWARE_TAG: Arthur&Athena&Taiyi
-2026-01-02T03:15:21.8563324Z   TZ: Asia/Shanghai
-2026-01-02T03:15:21.8563503Z   OPENWRT_PATH: /mnt/openwrt
-2026-01-02T03:15:21.8563966Z   VERSION_INFO: 作者: Roc Lai<br/>时间: 2026-01-01<br/>内容: Personal Tailor (qualcommax)<br/>hash: ac9652ded7f5fcef23f5b6cdbfead28cf9ed6727
-2026-01-02T03:15:21.8564444Z   VERSION_KERNEL: 6.12.62
-2026-01-02T03:15:21.8564644Z   SOURCE_REPO: immortalwrt.git
-2026-01-02T03:15:21.8564865Z   DEVICE_TARGET: qualcommax
-2026-01-02T03:15:21.8565113Z   DEVICE_SUBTARGET: ipq60xx
-2026-01-02T03:15:21.8565304Z   HASH: ac9652d
-2026-01-02T03:15:21.8565472Z   CACHE_DATE: 2026-01-02 11:15:21
-2026-01-02T03:15:21.8565677Z ##[endgroup]
-2026-01-02T03:15:22.1728114Z Cache not found for input keys: immortalwrt.git-openwrt-25.12-qualcommax-ipq60xx-ac9652d 2026-01-02 11:15:21, immortalwrt.git-openwrt-25.12-qualcommax-ipq60xx-
+2026-01-02T08:21:12.9119976Z   enableCrossOsArchive: false
+2026-01-02T08:21:12.9120199Z   fail-on-cache-miss: false
+2026-01-02T08:21:12.9120405Z   lookup-only: false
+2026-01-02T08:21:12.9120579Z   save-always: false
+2026-01-02T08:21:12.9120749Z env:
+2026-01-02T08:21:12.9120961Z   REPO_URL: https://github.com/laipeng668/openwrt-6.x.git
+2026-01-02T08:21:12.9121245Z   REPO_BRANCH: main-nss
+2026-01-02T08:21:12.9121463Z   CONFIG_FILE: configs/IPQ60XX.config
+2026-01-02T08:21:12.9121720Z   GENERAL_CONFIG_FILE: configs/General.config
+2026-01-02T08:21:12.9121972Z   DIY_SCRIPT: scripts/Roc-script.sh
+2026-01-02T08:21:12.9122188Z   CLASH_KERNEL: amd64
+2026-01-02T08:21:12.9122396Z   UPLOAD_BIN_DIR: false
+2026-01-02T08:21:12.9122582Z   FIRMWARE_RELEASE: true
+2026-01-02T08:21:12.9122768Z   FIRMWARE_TAG: IPQ60XX
+2026-01-02T08:21:12.9122948Z   TZ: Asia/Shanghai
+2026-01-02T08:21:12.9123127Z   OPENWRT_PATH: /mnt/openwrt
+2026-01-02T08:21:12.9123860Z   VERSION_INFO: 作者: Roc Lai<br/>时间: 2026-01-01<br/>内容: mac80211: update rx_bitrate function signature; add qihoo_bootconfig_toggle_rootfs function; remove unused nowifi DTS files<br/>hash: a3fe5d4739eb68732ad9c29cb11787288079440f
+2026-01-02T08:21:12.9124600Z   VERSION_KERNEL: 6.12.62
+2026-01-02T08:21:12.9124805Z   SOURCE_REPO: openwrt-6.x.git
+2026-01-02T08:21:12.9125020Z   DEVICE_TARGET: qualcommax
+2026-01-02T08:21:12.9125216Z   DEVICE_SUBTARGET: ipq60xx
+2026-01-02T08:21:12.9125415Z   HASH: a3fe5d4
+2026-01-02T08:21:12.9125583Z   CACHE_DATE: 2026-01-02 16:21:12
+2026-01-02T08:21:12.9125793Z ##[endgroup]
+2026-01-02T08:21:13.1863122Z Cache not found for input keys: openwrt-6.x.git-main-nss-qualcommax-ipq60xx-a3fe5d4 2026-01-02 16:21:12, openwrt-6.x.git-main-nss-qualcommax-ipq60xx-

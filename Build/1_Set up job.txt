@@ -1,47 +1,46 @@
-﻿2026-01-02T03:11:57.5129833Z Current runner version: '2.330.0'
-2026-01-02T03:11:57.5152440Z ##[group]Runner Image Provisioner
-2026-01-02T03:11:57.5153250Z Hosted Compute Agent
-2026-01-02T03:11:57.5153880Z Version: 20251211.462
-2026-01-02T03:11:57.5154461Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
-2026-01-02T03:11:57.5155204Z Build Date: 2025-12-11T16:28:49Z
-2026-01-02T03:11:57.5156129Z Worker ID: {2e1534a4-a612-4e04-9436-0c6a4b2ccec1}
-2026-01-02T03:11:57.5156855Z ##[endgroup]
-2026-01-02T03:11:57.5157355Z ##[group]Operating System
-2026-01-02T03:11:57.5158004Z Ubuntu
-2026-01-02T03:11:57.5158460Z 24.04.3
-2026-01-02T03:11:57.5158992Z LTS
-2026-01-02T03:11:57.5159481Z ##[endgroup]
-2026-01-02T03:11:57.5159968Z ##[group]Runner Image
-2026-01-02T03:11:57.5160502Z Image: ubuntu-24.04
-2026-01-02T03:11:57.5160963Z Version: 20251215.174.1
-2026-01-02T03:11:57.5162042Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
-2026-01-02T03:11:57.5163395Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
-2026-01-02T03:11:57.5164567Z ##[endgroup]
-2026-01-02T03:11:57.5167448Z ##[group]GITHUB_TOKEN Permissions
-2026-01-02T03:11:57.5170098Z Actions: write
-2026-01-02T03:11:57.5170637Z ArtifactMetadata: write
-2026-01-02T03:11:57.5171168Z Attestations: write
-2026-01-02T03:11:57.5171744Z Checks: write
-2026-01-02T03:11:57.5172232Z Contents: write
-2026-01-02T03:11:57.5172733Z Deployments: write
-2026-01-02T03:11:57.5173311Z Discussions: write
-2026-01-02T03:11:57.5173792Z Issues: write
-2026-01-02T03:11:57.5174287Z Metadata: read
-2026-01-02T03:11:57.5174826Z Models: read
-2026-01-02T03:11:57.5175278Z Packages: write
-2026-01-02T03:11:57.5176128Z Pages: write
-2026-01-02T03:11:57.5176688Z PullRequests: write
-2026-01-02T03:11:57.5177413Z RepositoryProjects: write
-2026-01-02T03:11:57.5177951Z SecurityEvents: write
-2026-01-02T03:11:57.5178519Z Statuses: write
-2026-01-02T03:11:57.5179042Z ##[endgroup]
-2026-01-02T03:11:57.5181229Z Secret source: Actions
-2026-01-02T03:11:57.5182245Z Prepare workflow directory
-2026-01-02T03:11:57.5608322Z Prepare all required actions
-2026-01-02T03:11:57.5644497Z Getting action download info
-2026-01-02T03:11:57.9735396Z Download action repository 'actions/checkout@main' (SHA:8e8c483db84b4bee98b60c0593521ed34d9990e8)
-2026-01-02T03:11:58.0786279Z Download action repository 'actions/cache@main' (SHA:9255dc7a253b0ccc959486e2bca901246202afeb)
-2026-01-02T03:11:58.8083945Z Download action repository 'actions/upload-artifact@main' (SHA:b7c566a772e6b6bfb58ed0dc250532a479d7789f)
-2026-01-02T03:11:59.5165436Z Download action repository 'ncipollo/release-action@main' (SHA:5f55df31e10e67a2ef62ea8f3fa1b926cee6f8b1)
-2026-01-02T03:12:00.1980430Z Download action repository 'Mattraks/delete-workflow-runs@main' (SHA:5bf9a1dac5c4d041c029f0a8370ddf0c5cb5aeb7)
-2026-01-02T03:12:00.7986167Z Complete job name: Build
+﻿2026-01-02T08:17:45.1192267Z Current runner version: '2.330.0'
+2026-01-02T08:17:45.1215380Z ##[group]Runner Image Provisioner
+2026-01-02T08:17:45.1216520Z Hosted Compute Agent
+2026-01-02T08:17:45.1217024Z Version: 20251211.462
+2026-01-02T08:17:45.1217719Z Commit: 6cbad8c2bb55d58165063d031ccabf57e2d2db61
+2026-01-02T08:17:45.1218601Z Build Date: 2025-12-11T16:28:49Z
+2026-01-02T08:17:45.1219291Z Worker ID: {d6c324f6-f023-4def-afcd-efe313fb7429}
+2026-01-02T08:17:45.1220046Z ##[endgroup]
+2026-01-02T08:17:45.1220566Z ##[group]Operating System
+2026-01-02T08:17:45.1221102Z Ubuntu
+2026-01-02T08:17:45.1221601Z 24.04.3
+2026-01-02T08:17:45.1222066Z LTS
+2026-01-02T08:17:45.1222476Z ##[endgroup]
+2026-01-02T08:17:45.1223034Z ##[group]Runner Image
+2026-01-02T08:17:45.1223600Z Image: ubuntu-24.04
+2026-01-02T08:17:45.1224099Z Version: 20251215.174.1
+2026-01-02T08:17:45.1225088Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20251215.174/images/ubuntu/Ubuntu2404-Readme.md
+2026-01-02T08:17:45.1226441Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20251215.174
+2026-01-02T08:17:45.1227621Z ##[endgroup]
+2026-01-02T08:17:45.1230261Z ##[group]GITHUB_TOKEN Permissions
+2026-01-02T08:17:45.1232479Z Actions: write
+2026-01-02T08:17:45.1233061Z ArtifactMetadata: write
+2026-01-02T08:17:45.1233590Z Attestations: write
+2026-01-02T08:17:45.1234128Z Checks: write
+2026-01-02T08:17:45.1234584Z Contents: write
+2026-01-02T08:17:45.1235084Z Deployments: write
+2026-01-02T08:17:45.1235943Z Discussions: write
+2026-01-02T08:17:45.1236454Z Issues: write
+2026-01-02T08:17:45.1236942Z Metadata: read
+2026-01-02T08:17:45.1237374Z Models: read
+2026-01-02T08:17:45.1237911Z Packages: write
+2026-01-02T08:17:45.1238728Z Pages: write
+2026-01-02T08:17:45.1239247Z PullRequests: write
+2026-01-02T08:17:45.1239924Z RepositoryProjects: write
+2026-01-02T08:17:45.1240449Z SecurityEvents: write
+2026-01-02T08:17:45.1240946Z Statuses: write
+2026-01-02T08:17:45.1241460Z ##[endgroup]
+2026-01-02T08:17:45.1243370Z Secret source: Actions
+2026-01-02T08:17:45.1244305Z Prepare workflow directory
+2026-01-02T08:17:45.1624454Z Prepare all required actions
+2026-01-02T08:17:45.1662225Z Getting action download info
+2026-01-02T08:17:45.5488840Z Download action repository 'actions/checkout@main' (SHA:8e8c483db84b4bee98b60c0593521ed34d9990e8)
+2026-01-02T08:17:45.9048006Z Download action repository 'actions/cache@main' (SHA:9255dc7a253b0ccc959486e2bca901246202afeb)
+2026-01-02T08:17:46.6025430Z Download action repository 'actions/upload-artifact@main' (SHA:b7c566a772e6b6bfb58ed0dc250532a479d7789f)
+2026-01-02T08:17:47.2272288Z Download action repository 'ncipollo/release-action@main' (SHA:5f55df31e10e67a2ef62ea8f3fa1b926cee6f8b1)
+2026-01-02T08:17:47.9109492Z Complete job name: Build
