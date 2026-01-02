@@ -1,0 +1,1215 @@
+kmod-qca-nss-drv-dtlsmgr fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-qca-nss-cfi-cryptoapi
+kmod-qca-nss-drv-l2tpv2 fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-l2tp, kmod-ppp
+kmod-qca-nss-drv-pptp fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-pptp
+3proxy-lib-pcre fused dependencies: libc, 3proxy
+kmod-qca-nss-drv-pppoe fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-bonding, kmod-ppp, kmod-pppoe
+3proxy-lib-ssl fused dependencies: libc, 3proxy, libopenssl
+3proxy-lib-strings fused dependencies: libc, 3proxy
+kmod-qca-nss-drv-map-t fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-nat46
+kmod-qca-nss-drv-tunipip6 fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-ip6-tunnel, kmod-iptunnel6
+kmod-qca-nss-drv-qdisc fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-qca-nss-drv-bridge-mgr
+3proxy-lib-traffic fused dependencies: libc, 3proxy
+kmod-qca-nss-drv fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-dp, nss-firmware
+mkdir -p /mnt/openwrt/dl
+3proxy-lib-transparent fused dependencies: libc, 3proxy
+3proxy-mod-ftppr fused dependencies: libc
+kmod-qca-nss-drv-igs fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-qca-nss-drv-qdisc, kmod-ifb, kmod-nf-conntrack, kmod-sched-core
+3proxy-mod-mycrypt fused dependencies: libc
+kmod-qca-nss-drv-netlink fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-qca-nss-drv-gre, kmod-qca-nss-drv-igs, kmod-qca-nss-drv-l2tpv2, kmod-qca-nss-drv-lag-mgr, kmod-qca-nss-drv-map-t, kmod-qca-nss-drv-match, kmod-qca-nss-drv-mirror, kmod-qca-nss-drv-pppoe, kmod-qca-nss-drv-pptp, kmod-qca-nss-drv-qdisc, kmod-qca-nss-drv-tun6rd, kmod-qca-nss-drv-tunipip6, kmod-qca-nss-drv-vxlanmgr
+kmod-qca-nss-drv-ipsecmgr fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-qca-nss-cfi-cryptoapi, kmod-qca-nss-drv-l2tpv2
+3proxy-mod-pop3p fused dependencies: libc
+3proxy-mod-proxy fused dependencies: libc
+3proxy-mod-smtpp fused dependencies: libc
+kmod-qca-nss-drv-ipsecmgr-klips fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv-ipsecmgr, kmod-qca-nss-cfi-cryptoapi, kmod-qca-nss-drv-vxlanmgr
+3proxy-mod-socks fused dependencies: libc
+3proxy-mod-tcppm fused dependencies: libc
+SHELL= flock /mnt/openwrt/tmp/.qca-nss-crypto-12.5.2024.09.16~60e27b9.tar.zst.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "qca-nss-crypto-12.5.2024.09.16~60e27b9.tar.zst" "f4d992ccfccdbd14463872afac44ab7d44cfae683a8e9768cee27948b62fd62d" "" || (  	echo "Checking out files from the git repository..."; mkdir -p /mnt/openwrt/tmp/dl && cd /mnt/openwrt/tmp/dl && rm -rf qca-nss-crypto-12.5.2024.09.16~60e27b9 && [ \! -d qca-nss-crypto-12.5.2024.09.16~60e27b9 ] && git clone --filter=blob:none  https://git.codelinaro.org/clo/qsdk/oss/lklm/nss-crypto.git qca-nss-crypto-12.5.2024.09.16~60e27b9 && (cd qca-nss-crypto-12.5.2024.09.16~60e27b9 && git checkout 60e27b9) && export TAR_TIMESTAMP=`cd qca-nss-crypto-12.5.2024.09.16~60e27b9 && git log -1 --no-show-signature --format='\''@%ct'\''` && echo "Generating formal git archive (apply .gitattributes rules)" && (cd qca-nss-crypto-12.5.2024.09.16~60e27b9 && git config core.abbrev 8 && git archive --format=tar HEAD --output=../qca-nss-crypto-12.5.2024.09.16~
+kmod-qca-nss-drv-ipsecmgr-xfrm fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv-ipsecmgr, kmod-qca-nss-ecm, kmod-qca-nss-drv-vxlanmgr, kmod-ipsec
+kmod-qca-nss-drv-bridge-mgr fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-qca-nss-drv-vlan-mgr, kmod-bonding
+3proxy-mod-tlspr fused dependencies: libc
+mkdir -p /mnt/openwrt/dl
+3proxy-mod-udppm fused dependencies: libc
+3proxy fused dependencies: libc
+kmod-qca-nss-drv-vlan-mgr fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-bonding
+mkdir -p /mnt/openwrt/dl
+kmod-qca-nss-drv-lag-mgr fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-qca-nss-drv-vlan-mgr, kmod-bonding
+kmod-qca-nss-drv-gre fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-gre6
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0+ curl -f --connect-timeout 5 --retry 3 --location https://mirror2.immortalwrt.org/sources/nss-firmware-2025.05.01~e4726900.tar.zst
+kmod-qca-nss-drv-pvxlanmgr fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-vxlan
+kmod-qca-nss-drv-eogremgr fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-qca-nss-drv-gre
+kmod-qca-nss-drv-clmapmgr fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-qca-nss-drv-eogremgr
+SHELL= flock /mnt/openwrt/tmp/.3proxy-0.9.5.tar.gz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "3proxy-0.9.5.tar.gz" "6f6da51d9bba93231e12acd707bb6cf86a1ab9491dc6dd0c79750cb3641541a3" "" "https://codeload.github.com/3proxy/3proxy/tar.gz/0.9.5?"    '
+SHELL= flock /mnt/openwrt/tmp/.qca-nss-ecm-12.5.2024.11.06~30fbfa4.tar.zst.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "qca-nss-ecm-12.5.2024.11.06~30fbfa4.tar.zst" "a6b508a41ae79cb579e83ea1d1f5a158c7758ab45f1d26a698677a5ec61ca03d" "" || (  	echo "Checking out files from the git repository..."; mkdir -p /mnt/openwrt/tmp/dl && cd /mnt/openwrt/tmp/dl && rm -rf qca-nss-ecm-12.5.2024.11.06~30fbfa4 && [ \! -d qca-nss-ecm-12.5.2024.11.06~30fbfa4 ] && git clone --filter=blob:none  https://git.codelinaro.org/clo/qsdk/oss/lklm/qca-nss-ecm.git qca-nss-ecm-12.5.2024.11.06~30fbfa4 && (cd qca-nss-ecm-12.5.2024.11.06~30fbfa4 && git checkout 30fbfa4) && export TAR_TIMESTAMP=`cd qca-nss-ecm-12.5.2024.11.06~30fbfa4 && git log -1 --no-show-signature --format='\''@%ct'\''` && echo "Generating formal git archive (apply .gitattributes rules)" && (cd qca-nss-ecm-12.5.2024.11.06~30fbfa4 && git config core.abbrev 8 && git archive --format=tar HEAD --output=../qca-nss-ecm-12.5.2024.11.06~30fbfa4.tar.git) &&  tar -
+kmod-qca-nss-drv-vxlanmgr fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-vxlan
+kmod-qca-nss-drv-match fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv
+kmod-qca-nss-drv-tlsmgr fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv, kmod-qca-nss-cfi-cryptoapi
+kmod-qca-nss-drv-mirror fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv
+kmod-qca-nss-drv-mscs fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv
+mkdir -p /mnt/openwrt/dl
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+kmod-qca-nss-drv-wifi-meshmgr fused dependencies: kernel (=6.12.62~unknown-r1), kmod-qca-nss-drv
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.qca-nss-drv-11.4.0.5.2021.09.13~53e5863.tar.zst.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "qca-nss-drv-11.4.0.5.2021.09.13~53e5863.tar.zst" "f13681c4aadde3aa713e4ae1426d22f19a387a729521aa1e19ba9d690c17b8e3" "" || (  	echo "Checking out files from the git repository..."; mkdir -p /mnt/openwrt/tmp/dl && cd /mnt/openwrt/tmp/dl && rm -rf qca-nss-drv-11.4.0.5.2021.09.13~53e5863 && [ \! -d qca-nss-drv-11.4.0.5.2021.09.13~53e5863 ] && git clone --filter=blob:none  https://git.codelinaro.org/clo/qsdk/oss/lklm/nss-drv.git qca-nss-drv-11.4.0.5.2021.09.13~53e5863 && (cd qca-nss-drv-11.4.0.5.2021.09.13~53e5863 && git checkout 53e5863) && export TAR_TIMESTAMP=`cd qca-nss-drv-11.4.0.5.2021.09.13~53e5863 && git log -1 --no-show-signature --format='\''@%ct'\''` && echo "Generating formal git archive (apply .gitattributes rules)" && (cd qca-nss-drv-11.4.0.5.2021.09.13~53e5863 && git config core.abbrev 8 && git archive --format=tar HEAD --output=../qca-nss-drv-11.4.0.5.2021.
+SHELL= flock /mnt/openwrt/tmp/.qca-nss-clients-11.4.0.5.2021.08.17~c4049d1.tar.zst.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "qca-nss-clients-11.4.0.5.2021.08.17~c4049d1.tar.zst" "5346ff2a8a89f6d671543f22e13594343b27bf81e709f07af46ade03a7614900" "" || (  	echo "Checking out files from the git repository..."; mkdir -p /mnt/openwrt/tmp/dl && cd /mnt/openwrt/tmp/dl && rm -rf qca-nss-clients-11.4.0.5.2021.08.17~c4049d1 && [ \! -d qca-nss-clients-11.4.0.5.2021.08.17~c4049d1 ] && git clone --filter=blob:none  https://git.codelinaro.org/clo/qsdk/oss/lklm/nss-clients.git qca-nss-clients-11.4.0.5.2021.08.17~c4049d1 && (cd qca-nss-clients-11.4.0.5.2021.08.17~c4049d1 && git checkout c4049d1) && export TAR_TIMESTAMP=`cd qca-nss-clients-11.4.0.5.2021.08.17~c4049d1 && git log -1 --no-show-signature --format='\''@%ct'\''` && echo "Generating formal git archive (apply .gitattributes rules)" && (cd qca-nss-clients-11.4.0.5.2021.08.17~c4049d1 && git config core.abbrev 8 && git archive --format=tar HEAD --
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0+ curl -f --connect-timeout 5 --retry 3 --location https://mirror2.immortalwrt.org/sources/qca-nss-crypto-12.5.2024.09.16~60e27b9.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0+ curl -f --connect-timeout 5 --retry 3 --location https://mirror2.immortalwrt.org/sources/qca-nss-clients-11.4.0.5.2021.08.17~c4049d1.tar.zst
+acme fused dependencies: libc, acme-acmesh
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0+ curl -f --connect-timeout 5 --retry 3 --location https://mirror2.immortalwrt.org/sources/qca-nss-ecm-12.5.2024.11.06~30fbfa4.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+make[2]: Nothing to be done for 'download'.
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/net/acme'
+time: package/feeds/packages/acme/download#0.09#0.09#0.31
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   138    0   138    0     0    261      0 --:--:-- --:--:-- --:--:--   261
++ curl -f --connect-timeout 5 --retry 3 --location https://codeload.github.com/3proxy/3proxy/tar.gz/0.9.5?/3proxy-0.9.5.tar.gz
++ curl -f --connect-timeout 5 --retry 3 --location https://mirror2.immortalwrt.org/sources/qca-nss-drv-11.4.0.5.2021.09.13~53e5863.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/net/acme-acmesh'
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   407  100   407    0     0    635      0 --:--:-- --:--:-- --:--:--  6898
+acme-acmesh fused dependencies: libc, acme-common, wget-ssl, ca-bundle, openssl-util, socat
+acme-acmesh-dnsapi fused dependencies: libc, acme-acmesh
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.acme-acmesh-3.1.1.tar.gz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "acme-acmesh-3.1.1.tar.gz" "c5d623ac0af400e83cd676aefaf045228f60e9fc597fea5db4c3a5bd7f6bfcf4" "" "https://codeload.github.com/acmesh-official/acme.sh/tar.gz/3.1.1?"    '
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0+ curl -f --connect-timeout 5 --retry 3 --location https://codeload.github.com/acmesh-official/acme.sh/tar.gz/3.1.1?/acme-acmesh-3.1.1.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  606k    0  606k    0     0  1735k      0 --:--:-- --:--:-- --:--:-- 1736k
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/net/3proxy'
+time: package/feeds/packages/3proxy/download#0.18#0.13#0.88
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/net/acme-common'
+100   138    0   138    0     0    248      0 --:--:-- --:--:-- --:--:--   247
+100   138    0   138    0     0    279      0 --:--:-- --:--:-- --:--:--   279
+acme-common fused dependencies: libc
+make[2]: Nothing to be done for 'download'.
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/net/acme-common'
+time: package/feeds/packages/acme-common/download#0.05#0.08#0.11
+100   138    0   138    0     0    273      0 --:--:-- --:--:-- --:--:--   273
+100   138    0   138    0     0    263      0 --:--:-- --:--:-- --:--:--   264
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/net/aria2'
+  0   154    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+100   138    0   138    0     0    275      0 --:--:-- --:--:-- --:--:--   275
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://mirror.immortalwrt.org/sources/nss-firmware-2025.05.01~e4726900.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   154    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://mirror.immortalwrt.org/sources/qca-nss-crypto-12.5.2024.09.16~60e27b9.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   154    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://mirror.immortalwrt.org/sources/qca-nss-clients-11.4.0.5.2021.08.17~c4049d1.tar.zst
+  0   154    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://mirror.immortalwrt.org/sources/qca-nss-ecm-12.5.2024.11.06~30fbfa4.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   154    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://mirror.immortalwrt.org/sources/qca-nss-drv-11.4.0.5.2021.09.13~53e5863.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  308k    0  308k    0     0   719k      0 --:--:-- --:--:-- --:--:--  720k
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/net/acme-acmesh'
+time: package/feeds/packages/acme-acmesh/download#0.15#0.09#0.64
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/utils/attr'
+aria2 fused dependencies: libc, zlib, libstdcpp, aria2-openssl
+aria2-openssl fused dependencies: libc, libopenssl, libopenssl-legacy
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.aria2-1.37.0.tar.xz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "aria2-1.37.0.tar.xz" "60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b" "" "https://github.com/aria2/aria2/releases/download/release-1.37.0/"    '
++ curl -f --connect-timeout 5 --retry 3 --location https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+attr fused dependencies: libc, libattr
+libattr fused dependencies: libc
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.attr-2.5.2.tar.xz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "attr-2.5.2.tar.xz" "f2e97b0ab7ce293681ab701915766190d607a1dba7fae8a718138150b700a70b" "" "@SAVANNAH/attr"    '
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0+ curl -f --connect-timeout 5 --retry 3 --location https://download.savannah.nongnu.org/releases/attr/attr-2.5.2.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0 1665k    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   138    0   138    0     0    277      0 --:--:-- --:--:-- --:--:--   277
+100   138    0   138    0     0    277      0 --:--:-- --:--:-- --:--:--   277
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   138    0   138    0     0    291      0 --:--:-- --:--:-- --:--:--   291
+100   138    0   138    0     0    291      0 --:--:-- --:--:-- --:--:--   291
+100 1665k  100 1665k    0     0  5325k      0 --:--:-- --:--:-- --:--:--  108M
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/net/aria2'
+time: package/feeds/packages/aria2/download#0.17#0.13#0.55
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/libs/avahi'
+100   138    0   138    0     0    280      0 --:--:-- --:--:-- --:--:--   280
+100   138    0   138    0     0    280      0 --:--:-- --:--:-- --:--:--   280
+100   138    0   138    0     0    281      0 --:--:-- --:--:-- --:--:--   281
+100   138    0   138    0     0    281      0 --:--:-- --:--:-- --:--:--   281
+100   138    0   138    0     0    281      0 --:--:-- --:--:-- --:--:--   281
+100   138    0   138    0     0    281      0 --:--:-- --:--:-- --:--:--   280
+libavahi-client fused dependencies: libc, avahi-dbus-daemon
+avahi-utils fused dependencies: libc, libavahi-client, libgdbm
+libavahi-dbus-support fused dependencies: libc, dbus
+libavahi-nodbus-support fused dependencies: libc, libpthread
+avahi-autoipd fused dependencies: libc, libdaemon
+avahi-dbus-daemon fused dependencies: libc, libavahi-dbus-support, libexpat, librt, libdaemon
+avahi-nodbus-daemon fused dependencies: libc, libavahi-nodbus-support, libexpat, librt, libdaemon
+avahi-daemon-service-http fused dependencies: libc, avahi-daemon
+avahi-daemon-service-ssh fused dependencies: libc, avahi-daemon
+avahi-dnsconfd fused dependencies: libc, libavahi, libdaemon, libpthread
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.avahi-0.8.tar.gz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "avahi-0.8.tar.gz" "060309d7a333d38d951bc27598c677af1796934dbd98e1024e7ad8de798fedda" "" "https://github.com/avahi/avahi/releases/download/v0.8" "https://avahi.org/download"    '
++ curl -f --connect-timeout 5 --retry 3 --location https://github.com/avahi/avahi/releases/download/v0.8/avahi-0.8.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 1554k  100 1554k    0     0  6440k      0 --:--:-- --:--:-- --:--:-- 6440k
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/libs/avahi'
+time: package/feeds/packages/avahi/dbus/download#0.17#0.10#0.43
+  0   291    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources-cdn.immortalwrt.org/nss-firmware-2025.05.01~e4726900.tar.zst
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/libs/avahi'
+  0   291    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources-cdn.immortalwrt.org/qca-nss-crypto-12.5.2024.09.16~60e27b9.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   291    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources-cdn.immortalwrt.org/qca-nss-clients-11.4.0.5.2021.08.17~c4049d1.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   291    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources-cdn.immortalwrt.org/qca-nss-ecm-12.5.2024.11.06~30fbfa4.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   291    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources-cdn.immortalwrt.org/qca-nss-drv-11.4.0.5.2021.09.13~53e5863.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+libavahi-client fused dependencies: libc, avahi-dbus-daemon
+avahi-utils fused dependencies: libc, libavahi-client, libgdbm
+libavahi-dbus-support fused dependencies: libc, dbus
+libavahi-nodbus-support fused dependencies: libc, libpthread
+avahi-autoipd fused dependencies: libc, libdaemon
+avahi-dbus-daemon fused dependencies: libc, libavahi-dbus-support, libexpat, librt, libdaemon
+avahi-nodbus-daemon fused dependencies: libc, libavahi-nodbus-support, libexpat, librt, libdaemon
+avahi-daemon-service-http fused dependencies: libc, avahi-daemon
+avahi-daemon-service-ssh fused dependencies: libc, avahi-daemon
+avahi-dnsconfd fused dependencies: libc, libavahi, libdaemon, libpthread
+make[2]: Nothing to be done for 'download'.
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/libs/avahi'
+time: package/feeds/packages/avahi/dbus/download#0.08#0.10#0.17
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/libs/avahi'
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.immortalwrt.org/qca-nss-crypto-12.5.2024.09.16~60e27b9.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+libavahi-client fused dependencies: libc, avahi-dbus-daemon
+avahi-utils fused dependencies: libc, libavahi-client, libgdbm
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+libavahi-dbus-support fused dependencies: libc, dbus
+libavahi-nodbus-support fused dependencies: libc, libpthread
+avahi-autoipd fused dependencies: libc, libdaemon
+avahi-dbus-daemon fused dependencies: libc, libavahi-dbus-support, libexpat, librt, libdaemon
+avahi-nodbus-daemon fused dependencies: libc, libavahi-nodbus-support, libexpat, librt, libdaemon
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.immortalwrt.org/nss-firmware-2025.05.01~e4726900.tar.zst
+avahi-daemon-service-http fused dependencies: libc, avahi-daemon
+avahi-daemon-service-ssh fused dependencies: libc, avahi-daemon
+avahi-dnsconfd fused dependencies: libc, libavahi, libdaemon, libpthread
+make[2]: Nothing to be done for 'download'.
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/libs/avahi'
+time: package/feeds/packages/avahi/dbus/download#0.07#0.08#0.13
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/libs/boost'
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
+  0     0    0     0+ curl -f --connect-timeout 5 --retry 3 --location https://sources.immortalwrt.org/qca-nss-clients-11.4.0.5.2021.08.17~c4049d1.tar.zst
+    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.immortalwrt.org/qca-nss-ecm-12.5.2024.11.06~30fbfa4.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Sp e % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0ed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.immortalwrt.org/qca-nss-drv-11.4.0.5.2021.09.13~53e5863.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.cdn.openwrt.org/qca-nss-crypto-12.5.2024.09.16~60e27b9.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+Selected Boost API aapcs for architecture aarch64 and cpu type "cortex-a53" 
+boost-atomic fused dependencies: libc, libstdcpp, libpthread, librt
+boost-charconv fused dependencies: libc, libstdcpp, libpthread, librt
+boost-chrono fused dependencies: libc, libstdcpp, libpthread, librt
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+boost-cobalt fused dependencies: libc, libstdcpp, libpthread, librt, boost-container, boost-context, boost-date_time
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+boost-container fused dependencies: libc, libstdcpp, libpthread, librt
+curl: (22) The requested URL returned error: 404
+boost-context fused dependencies: libc, libstdcpp, libpthread, librt, boost-chrono
+boost-contract fused dependencies: libc, libstdcpp, libpthread, librt, boost-atomic, boost-chrono, boost-container, boost-date_time, boost-thread
+boost-coroutine fused dependencies: libc, libstdcpp, libpthread, librt, boost-chrono, boost-context, boost-thread
+boost-date_time fused dependencies: libc, libstdcpp, libpthread, librt
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0Download failed.
+boost-fiber fused dependencies: libc, libstdcpp, libpthread, librt, boost-coroutine, boost-filesystem
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.cdn.openwrt.org/nss-firmware-2025.05.01~e4726900.tar.zst
+boost-filesystem fused dependencies: libc, libstdcpp, libpthread, librt, boost-atomic
+boost-graph fused dependencies: libc, libstdcpp, libpthread, librt
+boost-iostreams fused dependencies: libc, libstdcpp, libpthread, librt, boost-random, boost-regex
+boost-json fused dependencies: libc, libstdcpp, libpthread, librt, boost-container
+boost-locale fused dependencies: libc, libstdcpp, libpthread, librt, boost-chrono, boost-thread, boost-charconv
+boost-log fused dependencies: libc, libstdcpp, libpthread, librt, boost-chrono, boost-date_time, boost-thread, boost-filesystem, boost-regex, boost-serialization
+boost-math fused dependencies: libc, libstdcpp, libpthread, librt, boost-container, boost-random
+boost-nowide fused dependencies: libc, libstdcpp, libpthread, librt
+boost-program_options fused dependencies: libc, libstdcpp, libpthread, librt
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+boost-python3 fused dependencies: libc, libstdcpp, libpthread, librt, boost-container, boost-graph
+boost-random fused dependencies: libc, libstdcpp, libpthread, librt
+boost-regex fused dependencies: libc, libstdcpp, libpthread, librt
+boost-serialization fused dependencies: libc, libstdcpp, libpthread, librt
+boost-wserialization fused dependencies: libc, libstdcpp, libpthread, librt, boost-serialization
+boost-stacktrace fused dependencies: libc, libstdcpp, libpthread, librt
+boost-thread fused dependencies: libc, libstdcpp, libpthread, librt, boost-chrono, boost-atomic, boost-container, boost-date_time
+boost-timer fused dependencies: libc, libstdcpp, libpthread, librt, boost-chrono
+boost-type_erasure fused dependencies: libc, libstdcpp, libpthread, librt, boost-chrono, boost-thread
+boost-url fused dependencies: libc, libstdcpp, libpthread, librt
+boost-wave fused dependencies: libc, libstdcpp, libpthread, librt, boost-date_time, boost-thread, boost-filesystem, boost-container, boost-serialization, boost-regex
+boost-test fused dependencies: libc, libstdcpp, libpthread, librt, boost-timer
+boost-libs fused dependencies: libc, libstdcpp, libpthread, librt, boost-atomic, boost-charconv, boost-chrono, boost-cobalt, boost-container, boost-context, boost-contract, boost-coroutine, boost-date_time, boost-fiber, boost-filesystem, boost-graph, boost-iostreams, boost-json, boost-locale, boost-log, boost-math, boost-nowide, boost-program_options, boost-python3, boost-random, boost-regex, boost-serialization, boost-wserialization, boost-stacktrace, boost-thread, boost-timer, boost-type_erasure, boost-url, boost-wave
+boost fused dependencies: libc, libstdcpp, libpthread, librt
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.boost_1_89_0.tar.bz2.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "boost_1_89_0.tar.bz2" "85a33fa22621b4f314f8e85e1a5e2a9363d22e4f4992925d4bb3bc631b5a0c7a" "" "https://archives.boost.io/release/1.89.0/source" "@SF/boost/boost/1.89.0"    '
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.cdn.openwrt.org/qca-nss-ecm-12.5.2024.11.06~30fbfa4.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.cdn.openwrt.org/qca-nss-clients-11.4.0.5.2021.08.17~c4049d1.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0+ curl -f --connect-timeout 5 --retry 3 --location https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.bz2
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.cdn.openwrt.org/qca-nss-drv-11.4.0.5.2021.09.13~53e5863.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.openwrt.org/qca-nss-drv-11.4.0.5.2021.09.13~53e5863.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.openwrt.org/qca-nss-crypto-12.5.2024.09.16~60e27b9.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+100 20217  100 20217    0     0   7077      0  0:00:02  0:00:02 --:--:-- 18983
+make[2]: Leaving directory '/mnt/openwrt/feeds/luci/contrib/package/lucihttp'
+time: package/feeds/luci/lucihttp/download#0.26#0.12#3.36
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/admin/btop'
+btop fused dependencies: libc, libstdcpp
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.btop-1.4.5.tar.gz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "btop-1.4.5.tar.gz" "0ffe03d3e26a3e9bbfd5375adf34934137757994f297d6b699a46edd43c3fc02" "" "https://codeload.github.com/aristocratos/btop/tar.gz/v1.4.5?"    '
++ curl -f --connect-timeout 5 --retry 3 --location https://codeload.github.com/aristocratos/btop/tar.gz/v1.4.5?/btop-1.4.5.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.openwrt.org/nss-firmware-2025.05.01~e4726900.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.openwrt.org/qca-nss-ecm-12.5.2024.11.06~30fbfa4.tar.zst
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://sources.openwrt.org/qca-nss-clients-11.4.0.5.2021.08.17~c4049d1.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://mirror2.openwrt.org/sources/qca-nss-drv-11.4.0.5.2021.09.13~53e5863.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://mirror2.openwrt.org/sources/qca-nss-crypto-12.5.2024.09.16~60e27b9.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 1220k    0 1220k    0     0  2944k      0 --:--:-- --:--:-- --:--:-- 2948k
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/admin/btop'
+time: package/feeds/packages/btop/download#0.17#0.14#0.64
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/libs/c-ares'
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 75  147M   75  111M    0     0   112M      0  0:00:01 --:--:--  0:00:01  112M
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+libcares fused dependencies: libc
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.c-ares-1.34.6.tar.gz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "c-ares-1.34.6.tar.gz" "912dd7cc3b3e8a79c52fd7fb9c0f4ecf0aaa73e45efda880266a2d6e26b84ef5" "" "https://github.com/c-ares/c-ares/releases/download/v1.34.6"    '
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+ 53  326k   53  175k    0     0  77468      0  0:00:04  0:00:02  0:00:02  159k+ curl -f --connect-timeout 5 --retry 3 --location https://github.com/c-ares/c-ares/releases/download/v1.34.6/c-ares-1.34.6.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  147M  100  147M    0     0   116M      0  0:00:01  0:00:01 --:--:--  116M
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/libs/boost'
+curl: (22) The requested URL returned error: 404
+time: package/feeds/packages/boost/download#1.04#0.71#1.56
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://mirror2.openwrt.org/sources/nss-firmware-2025.05.01~e4726900.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/net/cgi-io'
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  326k  100  326k    0     0   127k      0  0:00:02  0:00:02 --:--:--  243k
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/utils/attr'
+time: package/feeds/packages/attr/download#0.16#0.10#2.74
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/utils/coremark'
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://mirror2.openwrt.org/sources/qca-nss-clients-11.4.0.5.2021.08.17~c4049d1.tar.zst
+  0   146    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
++ curl -f --connect-timeout 5 --retry 3 --location https://mirror2.openwrt.org/sources/qca-nss-ecm-12.5.2024.11.06~30fbfa4.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   153    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
+No more mirrors to try - giving up.
+Checking out files from the git repository...
+Cloning into 'qca-nss-drv-11.4.0.5.2021.09.13~53e5863'...
+100  994k  100  994k    0     0  3656k      0 --:--:-- --:--:-- --:--:-- 3656k
+  0   153    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
+No more mirrors to try - giving up.
+Checking out files from the git repository...
+Cloning into 'qca-nss-crypto-12.5.2024.09.16~60e27b9'...
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/libs/c-ares'
+time: package/feeds/packages/c-ares/download#0.21#0.12#0.50
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/utils/coreutils'
+cgi-io fused dependencies: libc, libubox, libubus
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.cgi-io-2025.12.11~658b14bd.tar.zst.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "cgi-io-2025.12.11~658b14bd.tar.zst" "1fafd6edd7a731427ea8ad1a3b02ebd59a46389e1c7afc8e16d4fd1f79af4659" "" || (  	echo "Checking out files from the git repository..."; mkdir -p /mnt/openwrt/tmp/dl && cd /mnt/openwrt/tmp/dl && rm -rf cgi-io-2025.12.11~658b14bd && [ \! -d cgi-io-2025.12.11~658b14bd ] && git clone --filter=blob:none  https://git.openwrt.org/project/cgi-io.git cgi-io-2025.12.11~658b14bd && (cd cgi-io-2025.12.11~658b14bd && git checkout 658b14bda2a0fb617fa456401daee61aae42c805) && export TAR_TIMESTAMP=`cd cgi-io-2025.12.11~658b14bd && git log -1 --no-show-signature --format='\''@%ct'\''` && echo "Generating formal git archive (apply .gitattributes rules)" && (cd cgi-io-2025.12.11~658b14bd && git config core.abbrev 8 && git archive --format=tar HEAD --output=../cgi-io-2025.12.11~658b14bd.tar.git) &&  tar --numeric-owner --owner=0 --group=0 --ignore-failed-read -C cgi-io-
+coremark fused dependencies: libc
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.coremark-2025-05-01.tar.gz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "coremark-2025-05-01.tar.gz" "4067e7f260218df13f2875d8f821a8ff32a84153c6e0759d7c89f96c0a8bf987" "" "https://codeload.github.com/eembc/coremark/tar.gz/1f483d5b8316753a742cbf5590caf5bd0a4e4777?"    '
++ curl -f --connect-timeout 5 --retry 3 --location https://mirror2.immortalwrt.org/sources/cgi-io-2025.12.11~658b14bd.tar.zst
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0+ curl -f --connect-timeout 5 --retry 3 --location https://codeload.github.com/eembc/coremark/tar.gz/1f483d5b8316753a742cbf5590caf5bd0a4e4777?/coremark-2025-05-01.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+coreutils fused dependencies: libc
+coreutils-base32 fused dependencies: libc, coreutils
+coreutils-base64 fused dependencies: libc, coreutils
+coreutils-basename fused dependencies: libc, coreutils
+coreutils-basenc fused dependencies: libc, coreutils, libgmp
+coreutils-b2sum fused dependencies: libc, coreutils
+coreutils-cat fused dependencies: libc, coreutils
+coreutils-chgrp fused dependencies: libc, coreutils
+coreutils-chmod fused dependencies: libc, coreutils
+coreutils-chown fused dependencies: libc, coreutils
+coreutils-chroot fused dependencies: libc, coreutils
+coreutils-cksum fused dependencies: libc, coreutils
+coreutils-comm fused dependencies: libc, coreutils
+coreutils-cp fused dependencies: libc, coreutils, libacl
+coreutils-csplit fused dependencies: libc, coreutils
+coreutils-cut fused dependencies: libc, coreutils
+coreutils-date fused dependencies: libc, coreutils
+coreutils-dd fused dependencies: libc, coreutils
+coreutils-df fused dependencies: libc, coreutils
+coreutils-dir fused dependencies: libc, coreutils, libacl, libcap
+coreutils-dircolors fused dependencies: libc, coreutils
+coreutils-dirname fused dependencies: libc, coreutils
+coreutils-du fused dependencies: libc, coreutils
+coreutils-echo fused dependencies: libc, coreutils
+coreutils-env fused dependencies: libc, coreutils
+coreutils-expand fused dependencies: libc, coreutils
+coreutils-expr fused dependencies: libc, coreutils, libgmp
+coreutils-factor fused dependencies: libc, coreutils, libgmp
+coreutils-false fused dependencies: libc, coreutils
+coreutils-fmt fused dependencies: libc, coreutils
+coreutils-fold fused dependencies: libc, coreutils
+coreutils-groups fused dependencies: libc, coreutils
+coreutils-head fused dependencies: libc, coreutils
+coreutils-hostid fused dependencies: libc, coreutils
+coreutils-id fused dependencies: libc, coreutils
+coreutils-install fused dependencies: libc, coreutils, libacl
+coreutils-join fused dependencies: libc, coreutils
+coreutils-kill fused dependencies: libc, coreutils
+coreutils-link fused dependencies: libc, coreutils
+coreutils-ln fused dependencies: libc, coreutils
+coreutils-logname fused dependencies: libc, coreutils
+coreutils-ls fused dependencies: libc, coreutils, libacl, libcap
+coreutils-md5sum fused dependencies: libc, coreutils
+coreutils-mkdir fused dependencies: libc, coreutils
+coreutils-mkfifo fused dependencies: libc, coreutils
+coreutils-mknod fused dependencies: libc, coreutils
+coreutils-mktemp fused dependencies: libc, coreutils
+coreutils-mv fused dependencies: libc, coreutils, libacl
+coreutils-nice fused dependencies: libc, coreutils
+coreutils-nl fused dependencies: libc, coreutils
+coreutils-nohup fused dependencies: libc, coreutils
+coreutils-nproc fused dependencies: libc, coreutils
+coreutils-numfmt fused dependencies: libc, coreutils
+coreutils-od fused dependencies: libc, coreutils
+coreutils-paste fused dependencies: libc, coreutils
+coreutils-pathchk fused dependencies: libc, coreutils
+coreutils-pinky fused dependencies: libc, coreutils
+coreutils-pr fused dependencies: libc, coreutils
+coreutils-printenv fused dependencies: libc, coreutils
+coreutils-printf fused dependencies: libc, coreutils
+coreutils-ptx fused dependencies: libc, coreutils
+coreutils-pwd fused dependencies: libc, coreutils
+coreutils-readlink fused dependencies: libc, coreutils
+coreutils-realpath fused dependencies: libc, coreutils
+coreutils-rm fused dependencies: libc, coreutils
+coreutils-rmdir fused dependencies: libc, coreutils
+coreutils-seq fused dependencies: libc, coreutils
+coreutils-sha1sum fused dependencies: libc, coreutils
+coreutils-sha224sum fused dependencies: libc, coreutils
+coreutils-sha256sum fused dependencies: libc, coreutils
+coreutils-sha384sum fused dependencies: libc, coreutils
+coreutils-sha512sum fused dependencies: libc, coreutils
+coreutils-shred fused dependencies: libc, coreutils
+coreutils-shuf fused dependencies: libc, coreutils
+coreutils-sleep fused dependencies: libc, coreutils
+coreutils-sort fused dependencies: libc, coreutils, libpthread
+coreutils-split fused dependencies: libc, coreutils
+coreutils-stat fused dependencies: libc, coreutils
+coreutils-stdbuf fused dependencies: libc, coreutils
+coreutils-stty fused dependencies: libc, coreutils
+coreutils-sum fused dependencies: libc, coreutils
+coreutils-sync fused dependencies: libc, coreutils
+coreutils-tac fused dependencies: libc, coreutils
+coreutils-tail fused dependencies: libc, coreutils
+coreutils-tee fused dependencies: libc, coreutils
+coreutils-test fused dependencies: libc, coreutils
+coreutils-timeout fused dependencies: libc, coreutils, librt
+coreutils-touch fused dependencies: libc, coreutils
+coreutils-tr fused dependencies: libc, coreutils
+coreutils-true fused dependencies: libc, coreutils
+coreutils-truncate fused dependencies: libc, coreutils
+coreutils-tsort fused dependencies: libc, coreutils
+coreutils-tty fused dependencies: libc, coreutils
+coreutils-uname fused dependencies: libc, coreutils
+coreutils-unexpand fused dependencies: libc, coreutils
+coreutils-uniq fused dependencies: libc, coreutils
+coreutils-unlink fused dependencies: libc, coreutils
+coreutils-uptime fused dependencies: libc, coreutils
+coreutils-users fused dependencies: libc, coreutils
+coreutils-vdir fused dependencies: libc, coreutils, libacl, libcap
+coreutils-wc fused dependencies: libc, coreutils
+coreutils-who fused dependencies: libc, coreutils
+coreutils-whoami fused dependencies: libc, coreutils
+coreutils-yes fused dependencies: libc, coreutils
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.coreutils-9.9.tar.xz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "coreutils-9.9.tar.xz" "19bcb6ca867183c57d77155eae946c5eced88183143b45ca51ad7d26c628ca75" "" "@GNU/coreutils"    '
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0+ curl -f --connect-timeout 5 --retry 3 --location https://mirrors.tencent.com/gnu/coreutils/coreutils-9.9.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   153    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
+No more mirrors to try - giving up.
+  0   153    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
+No more mirrors to try - giving up.
+Checking out files from the git repository...
+Cloning into 'qca-nss-clients-11.4.0.5.2021.08.17~c4049d1'...
+  0   153    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 404
+Download failed.
+No more mirrors to try - giving up.
+Checking out files from the git repository...
+Cloning into 'qca-nss-ecm-12.5.2024.11.06~30fbfa4'...
+100 6147k  100 6147k    0     0  37.7M      0 --:--:-- --:--:-- --:--:-- 37.9M
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/utils/coreutils'
+time: package/feeds/packages/coreutils/download#0.25#0.14#0.47
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/net/curl'
+100 96981    0 96981    0     0   274k      0 --:--:-- --:--:-- --:--:--  273k
+100  396k    0  396k    0     0  1031k      0 --:--:-- --:--:-- --:--:-- 1031k
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/utils/coremark'
+time: package/feeds/packages/coremark/download#0.17#0.13#0.66
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/utils/dbus'
+100   138    0   138    0     0    276      0 --:--:-- --:--:-- --:--:--   276
+100   138    0   138    0     0    275      0 --:--:-- --:--:-- --:--:--   274
+libcurl fused dependencies: libc, libopenssl, libpthread, libnghttp2, ca-bundle
+curl fused dependencies: libc, libcurl4
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.curl-8.15.0.tar.xz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "curl-8.15.0.tar.xz" "6cd0a8a5b126ddfda61c94dc2c3fc53481ba7a35461cf7c5ab66aa9d6775b609" "" "https://github.com/curl/curl/releases/download/curl-8_15_0/" "https://curl.se/download/"    '
++ curl -f --connect-timeout 5 --retry 3 --location https://github.com/curl/curl/releases/download/curl-8_15_0/curl-8.15.0.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+libdbus fused dependencies: libc, libpthread
+dbus fused dependencies: libc, libexpat, libdbus
+dbus-utils fused dependencies: libc, dbus
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.dbus-1.16.2.tar.xz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "dbus-1.16.2.tar.xz" "0ba2a1a4b16afe7bceb2c07e9ce99a8c2c3508e5dec290dbb643384bd6beb7e2" "" "https://dbus.freedesktop.org/releases/dbus"    '
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100   395  100   395    0     0    648      0 --:--:-- --:--:-- --:--:--   648
++ curl -f --connect-timeout 5 --retry 3 --location https://dbus.freedesktop.org/releases/dbus/dbus-1.16.2.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 2708k  100 2708k    0     0  6294k      0 --:--:-- --:--:-- --:--:-- 6294k
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/net/curl'
+time: package/feeds/packages/curl/download#0.17#0.14#0.64
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/net/etherwake'
+100 1089k  100 1089k    0     0  2246k      0 --:--:-- --:--:-- --:--:-- 2251k
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/utils/dbus'
+time: package/feeds/packages/dbus/download#0.14#0.12#0.68
+etherwake fused dependencies: libc
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/libs/expat'
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.etherwake_1.09.orig.tar.gz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "etherwake_1.09.orig.tar.gz" "54241c7689579dc86e29e6afbc6d60e69f97135091a1395c8a10f6d5a2daec1d" "" "https://ftp.debian.org/debian/pool/main/e/etherwake"    '
++ curl -f --connect-timeout 5 --retry 3 --location https://ftp.debian.org/debian/pool/main/e/etherwake/etherwake_1.09.orig.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+libexpat fused dependencies: libc
+make[2]: Nothing to be done for 'download'.
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/libs/expat'
+time: package/feeds/packages/expat/download#0.08#0.08#0.15
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/net/frp'
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100  5474  100  5474    0     0  51990      0 --:--:-- --:--:-- --:--:-- 52133
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/net/etherwake'
+time: package/feeds/packages/etherwake/download#0.14#0.11#0.30
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/libs/gnutls'
+frpc fused dependencies: libc
+frps fused dependencies: libc
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.frp-0.65.0.tar.gz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "frp-0.65.0.tar.gz" "bbec0d1855e66c96e3a79ff97b8c74d9b1b45ec560aa7132550254d48321f7de" "" "https://codeload.github.com/fatedier/frp/tar.gz/v0.65.0?"    '
+bash: line 1: /mnt/openwrt/staging_dir/hostpkg/bin/gettext: No such file or directory
+bash: line 1: /mnt/openwrt/staging_dir/host/bin/sed: No such file or directory
+certtool fused dependencies: libc, libgnutls
+gnutls-utils fused dependencies: libc, libgnutls
+libgnutls fused dependencies: libc, libnettle, libgmp, libatomic
+libgnutls-dane fused dependencies: libc, libgnutls
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.gnutls-3.8.10.tar.xz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "gnutls-3.8.10.tar.xz" "db7fab7cce791e7727ebbef2334301c821d79a550ec55c9ef096b610b03eb6b7" "" "https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8"    '
++ curl -f --connect-timeout 5 --retry 3 --location https://codeload.github.com/fatedier/frp/tar.gz/v0.65.0?/frp-0.65.0.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0+ curl -f --connect-timeout 5 --retry 3 --location https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.10.tar.xz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+100 1119k    0 1119k    0     0  2909k      0 --:--:-- --:--:-- --:--:-- 2914k
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/net/frp'
+time: package/feeds/packages/frp/download#0.16#0.12#0.60
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/utils/gptfdisk'
+gdisk fused dependencies: libc, libstdcpp, libuuid
+cgdisk fused dependencies: libc, libstdcpp, libuuid, libncursesw
+sgdisk fused dependencies: libc, libstdcpp, libuuid, libpopt
+fixparts fused dependencies: libc, libstdcpp
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.gptfdisk-1.0.10.tar.gz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "gptfdisk-1.0.10.tar.gz" "2abed61bc6d2b9ec498973c0440b8b804b7a72d7144069b5a9209b2ad693a282" "" "@SF/gptfdisk"    '
++ curl -f --connect-timeout 5 --retry 3 --location https://downloads.sourceforge.net/gptfdisk/gptfdisk-1.0.10.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 11111  100 11111    0     0   5280      0  0:00:02  0:00:02 --:--:-- 51202
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/net/cgi-io'
+time: package/feeds/packages/cgi-io/download#0.24#0.12#2.35
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/net/haproxy'
+100   390  100   390    0     0   5269      0 --:--:-- --:--:-- --:--:--  5342
+100   389  100   389    0     0   3066      0 --:--:-- --:--:-- --:--:--  3066
+haproxy fused dependencies: libc, libpcre2, libltdl, zlib, libpthread, liblua5.4, libatomic, libopenssl, libncurses, libreadline
+halog fused dependencies: libc, haproxy
+haproxy-nossl fused dependencies: libc, libpcre2, libltdl, zlib, libpthread, liblua5.4, libatomic
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.haproxy-3.2.9.tar.gz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "haproxy-3.2.9.tar.gz" "e660d141b29019f4d198785b0834cc3e9c96efceeb807c2fff2fc935bd3354c2" "" "https://www.haproxy.org/download/3.2/src"    '
++ curl -f --connect-timeout 5 --retry 3 --location https://www.haproxy.org/download/3.2/src/haproxy-3.2.9.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0nss-firmware-2025.05.01~e4726900.tar.zst: Download from https://github.com/qosmio/qca-sdk-nss-fw.git failed
+nss-firmware-2025.05.01~e4726900.tar.zst: Wrong hash (probably caused by .gitattributes), expecting 3ec87f221e8905d4b6b8b3d207b7f7c4666c3bc8db7c1f06d4ae2e78f863b8f4, got 881cbf75efafe380b5adc91bfb1f68add5e29c9274eb950bb1e815c7a3622807
+Checking out files from the git repository...
+Cloning into 'nss-firmware-2025.05.01~e4726900'...
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0Note: switching to 'e4726900138b3e77fbbeaa32e58aa40a66d6b01a'.
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+  git switch -c <new-branch-name>
+Or undo this operation with:
+  git switch -
+Turn off this advice by setting config variable advice.detachedHead to false
+HEAD is now at e472690 QCA_Networking_2022.SPF_12.2: IPQ5018: Add NSS FW 12.2-156
+Generating formal git archive (apply .gitattributes rules)
+Packing checkout...
+  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0
+  0 5003k    0 32411    0     0  28392      0  0:03:00  0:00:01  0:02:59 28380
+  1 6747k    1 81920    0     0  41876      0  0:02:45  0:00:01  0:02:44 41859
+  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+100 5003k  100 5003k    0     0  2396k      0  0:00:02  0:00:02 --:--:-- 2397k
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/net/haproxy'
+time: package/feeds/packages/haproxy/ssl/download#0.17#0.12#2.28
+make[2]: Entering directory '/mnt/openwrt/feeds/packages/utils/hd-idle'
+Hash mismatch for file nss-firmware-2025.05.01~e4726900.tar.zst: expected 3ec87f221e8905d4b6b8b3d207b7f7c4666c3bc8db7c1f06d4ae2e78f863b8f4, got 881cbf75efafe380b5adc91bfb1f68add5e29c9274eb950bb1e815c7a3622807
+make[2]: *** [Makefile:167: /mnt/openwrt/dl/nss-firmware-2025.05.01~e4726900.tar.zst] Error 1
+make[2]: Leaving directory '/mnt/openwrt/feeds/nss_packages/firmware/nss-firmware'
+time: package/feeds/nss_packages/nss-firmware/download#2.92#0.52#8.69
+    ERROR: package/feeds/nss_packages/nss-firmware failed to build.
+make[1]: *** [package/Makefile:187: package/feeds/nss_packages/nss-firmware/download] Error 1
+make[1]: *** Waiting for unfinished jobs....
+hd-idle fused dependencies: libc
+mkdir -p /mnt/openwrt/dl
+SHELL= flock /mnt/openwrt/tmp/.hd-idle-1.05.tgz.flock -c '  	/mnt/openwrt/scripts/download.pl "/mnt/openwrt/dl" "hd-idle-1.05.tgz" "4efefe79d145b50e055582730d9d685e485da3df3dad90fef030036d52aa3a0c" "" "@SF/hd-idle"    '
+ 41 6747k   41 2824k    0     0   964k      0  0:00:06  0:00:02  0:00:04  963k+ curl -f --connect-timeout 5 --retry 3 --location https://downloads.sourceforge.net/hd-idle/hd-idle-1.05.tgz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+100   339  100   339    0     0   4146      0 --:--:-- --:--:-- --:--:--  4185
+100 6747k  100 6747k    0     0  2167k      0  0:00:03  0:00:03 --:--:-- 2167k
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/libs/gnutls'
+time: package/feeds/packages/gnutls/download#0.20#0.17#3.34
+100 17951  100 17951    0     0  46689      0 --:--:-- --:--:-- --:--:-- 46689
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/utils/hd-idle'
+time: package/feeds/packages/hd-idle/download#0.15#0.11#0.57
+  0     0    0     0    0     0      0      0 --:--:--  0:00:03 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:04 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:06 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:07 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:08 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:09 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:10 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:11 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:12 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:13 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:14 --:--:--     0
+  0     0    0     0    0     0      0      0 --:--:--  0:00:14 --:--:--     0
+100  215k  100  215k    0     0  15129      0  0:00:14  0:00:14 --:--:-- 63829
+make[2]: Leaving directory '/mnt/openwrt/feeds/packages/utils/gptfdisk'
+time: package/feeds/packages/gptfdisk/download#0.17#0.11#14.78
+Updating files:   0% (1/435)
+Updating files:   1% (5/435)
+Updating files:   2% (9/435)
+Updating files:   3% (14/435)
+Updating files:   4% (18/435)
+Updating files:   5% (22/435)
+Updating files:   6% (27/435)
+Updating files:   7% (31/435)
+Updating files:   8% (35/435)
+Updating files:   9% (40/435)
+Updating files:  10% (44/435)
+Updating files:  11% (48/435)
+Updating files:  12% (53/435)
+Updating files:  13% (57/435)
+Updating files:  14% (61/435)
+Updating files:  15% (66/435)
+Updating files:  16% (70/435)
+Updating files:  17% (74/435)
+Updating files:  18% (79/435)
+Updating files:  19% (83/435)
+Updating files:  20% (87/435)
+Updating files:  21% (92/435)
+Updating files:  22% (96/435)
+Updating files:  23% (101/435)
+Updating files:  24% (105/435)
+Updating files:  25% (109/435)
+Updating files:  26% (114/435)
+Updating files:  27% (118/435)
+Updating files:  28% (122/435)
+Updating files:  29% (127/435)
+Updating files:  30% (131/435)
+Updating files:  31% (135/435)
+Updating files:  32% (140/435)
+Updating files:  33% (144/435)
+Updating files:  34% (148/435)
+Updating files:  35% (153/435)
+Updating files:  36% (157/435)
+Updating files:  37% (161/435)
+Updating files:  38% (166/435)
+Updating files:  39% (170/435)
+Updating files:  40% (174/435)
+Updating files:  41% (179/435)
+Updating files:  42% (183/435)
+Updating files:  43% (188/435)
+Updating files:  44% (192/435)
+Updating files:  45% (196/435)
+Updating files:  46% (201/435)
+Updating files:  47% (205/435)
+Updating files:  48% (209/435)
+Updating files:  49% (214/435)
+Updating files:  50% (218/435)
+Updating files:  51% (222/435)
+Updating files:  52% (227/435)
+Updating files:  53% (231/435)
+Updating files:  54% (235/435)
+Updating files:  55% (240/435)
+Updating files:  56% (244/435)
+Updating files:  57% (248/435)
+Updating files:  58% (253/435)
+Updating files:  59% (257/435)
+Updating files:  60% (261/435)
+Updating files:  61% (266/435)
+Updating files:  62% (270/435)
+Updating files:  63% (275/435)
+Updating files:  64% (279/435)
+Updating files:  65% (283/435)
+Updating files:  66% (288/435)
+Updating files:  67% (292/435)
+Updating files:  68% (296/435)
+Updating files:  69% (301/435)
+Updating files:  70% (305/435)
+Updating files:  71% (309/435)
+Updating files:  72% (314/435)
+Updating files:  73% (318/435)
+Updating files:  74% (322/435)
+Updating files:  75% (327/435)
+Updating files:  76% (331/435)
+Updating files:  77% (335/435)
+Updating files:  78% (340/435)
+Updating files:  79% (344/435)
+Updating files:  80% (348/435)
+Updating files:  81% (353/435)
+Updating files:  82% (357/435)
+Updating files:  83% (362/435)
+Updating files:  84% (366/435)
+Updating files:  85% (370/435)
+Updating files:  86% (375/435)
+Updating files:  87% (379/435)
+Updating files:  88% (383/435)
+Updating files:  89% (388/435)
+Updating files:  90% (392/435)
+Updating files:  91% (396/435)
+Updating files:  92% (401/435)
+Updating files:  93% (405/435)
+Updating files:  94% (409/435)
+Updating files:  95% (414/435)
+Updating files:  96% (418/435)
+Updating files:  97% (422/435)
+Updating files:  98% (427/435)
+Updating files:  99% (431/435)
+Updating files: 100% (435/435)
+Updating files: 100% (435/435), done.
+Updating files:   0% (1/284)
+Updating files:   1% (3/284)
+Updating files:   2% (6/284)
+Updating files:   3% (9/284)
+Updating files:   4% (12/284)
+Updating files:   5% (15/284)
+Updating files:   6% (18/284)
+Updating files:   7% (20/284)
+Updating files:   8% (23/284)
+Updating files:   9% (26/284)
+Updating files:  10% (29/284)
+Updating files:  11% (32/284)
+Updating files:  12% (35/284)
+Updating files:  13% (37/284)
+Updating files:  14% (40/284)
+Updating files:  15% (43/284)
+Updating files:  16% (46/284)
+Updating files:  17% (49/284)
+Updating files:  18% (52/284)
+Updating files:  19% (54/284)
+Updating files:  20% (57/284)
+Updating files:  21% (60/284)
+Updating files:  22% (63/284)
+Updating files:  23% (66/284)
+Updating files:  24% (69/284)
+Updating files:  25% (71/284)
+Updating files:  26% (74/284)
+Updating files:  27% (77/284)
+Updating files:  28% (80/284)
+Updating files:  29% (83/284)
+Updating files:  30% (86/284)
+Updating files:  31% (89/284)
+Updating files:  32% (91/284)
+Updating files:  33% (94/284)
+Updating files:  34% (97/284)
+Updating files:  35% (100/284)
+Updating files:  36% (103/284)
+Updating files:  37% (106/284)
+Updating files:  38% (108/284)
+Updating files:  39% (111/284)
+Updating files:  40% (114/284)
+Updating files:  41% (117/284)
+Updating files:  42% (120/284)
+Updating files:  43% (123/284)
+Updating files:  44% (125/284)
+Updating files:  45% (128/284)
+Updating files:  46% (131/284)
+Updating files:  47% (134/284)
+Updating files:  48% (137/284)
+Updating files:  49% (140/284)
+Updating files:  50% (142/284)
+Updating files:  51% (145/284)
+Updating files:  52% (148/284)
+Updating files:  53% (151/284)
+Updating files:  54% (154/284)
+Updating files:  55% (157/284)
+Updating files:  56% (160/284)
+Updating files:  57% (162/284)
+Updating files:  58% (165/284)
+Updating files:  59% (168/284)
+Updating files:  60% (171/284)
+Updating files:  61% (174/284)
+Updating files:  62% (177/284)
+Updating files:  63% (179/284)
+Updating files:  64% (182/284)
+Updating files:  65% (185/284)
+Updating files:  66% (188/284)
+Updating files:  67% (191/284)
+Updating files:  68% (194/284)
+Updating files:  69% (196/284)
+Updating files:  70% (199/284)
+Updating files:  71% (202/284)
+Updating files:  72% (205/284)
+Updating files:  73% (208/284)
+Updating files:  74% (211/284)
+Updating files:  75% (213/284)
+Updating files:  76% (216/284)
+Updating files:  77% (219/284)
+Updating files:  78% (222/284)
+Updating files:  79% (225/284)
+Updating files:  80% (228/284)
+Updating files:  81% (231/284)
+Updating files:  82% (233/284)
+Updating files:  83% (236/284)
+Updating files:  84% (239/284)
+Updating files:  85% (242/284)
+Updating files:  86% (245/284)
+Updating files:  87% (248/284)
+Updating files:  88% (250/284)
+Updating files:  89% (253/284)
+Updating files:  90% (256/284)
+Updating files:  91% (259/284)
+Updating files:  92% (262/284)
+Updating files:  93% (265/284)
+Updating files:  94% (267/284)
+Updating files:  95% (270/284)
+Updating files:  96% (273/284)
+Updating files:  97% (276/284)
+Updating files:  98% (279/284)
+Updating files:  99% (282/284)
+Updating files: 100% (284/284)
+Updating files: 100% (284/284), done.
+Note: switching to '53e5863'.
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+  git switch -c <new-branch-name>
+Or undo this operation with:
+  git switch -
+Turn off this advice by setting config variable advice.detachedHead to false
+HEAD is now at 53e5863 Merge "[qca-nss-drv] Wifi Peer authorization is enabled by default"
+Generating formal git archive (apply .gitattributes rules)
+Packing checkout...
+Updating files:   2% (1/42)
+Updating files:   4% (2/42)
+Updating files:   7% (3/42)
+Updating files:   9% (4/42)
+Updating files:  11% (5/42)
+Updating files:  14% (6/42)
+Updating files:  16% (7/42)
+Updating files:  19% (8/42)
+Updating files:  21% (9/42)
+Updating files:  23% (10/42)
+Updating files:  26% (11/42)
+Updating files:  28% (12/42)
+Updating files:  30% (13/42)
+Updating files:  33% (14/42)
+Updating files:  35% (15/42)
+Updating files:  38% (16/42)
+Updating files:  40% (17/42)
+Updating files:  42% (18/42)
+Updating files:  45% (19/42)
+Updating files:  47% (20/42)
+Updating files:  50% (21/42)
+Updating files:  52% (22/42)
+Updating files:  54% (23/42)
+Updating files:  57% (24/42)
+Updating files:  59% (25/42)
+Updating files:  61% (26/42)
+Updating files:  64% (27/42)
+Updating files:  66% (28/42)
+Updating files:  69% (29/42)
+Updating files:  71% (30/42)
+Updating files:  73% (31/42)
+Updating files:  76% (32/42)
+Updating files:  78% (33/42)
+Updating files:  80% (34/42)
+Updating files:  83% (35/42)
+Updating files:  85% (36/42)
+Updating files:  88% (37/42)
+Updating files:  90% (38/42)
+Updating files:  92% (39/42)
+Updating files:  95% (40/42)
+Updating files:  97% (41/42)
+Updating files: 100% (42/42)
+Updating files: 100% (42/42), done.
+make[2]: Leaving directory '/mnt/openwrt/feeds/nss_packages/qca-nss-drv'
+time: package/feeds/nss_packages/qca-nss-drv/download#2.03#0.42#104.23
+Updating files:   0% (1/112)
+Updating files:   1% (2/112)
+Updating files:   2% (3/112)
+Updating files:   3% (4/112)
+Updating files:   4% (5/112)
+Updating files:   5% (6/112)
+Updating files:   6% (7/112)
+Updating files:   7% (8/112)
+Updating files:   8% (9/112)
+Updating files:   9% (11/112)
+Updating files:  10% (12/112)
+Updating files:  11% (13/112)
+Updating files:  12% (14/112)
+Updating files:  13% (15/112)
+Updating files:  14% (16/112)
+Updating files:  15% (17/112)
+Updating files:  16% (18/112)
+Updating files:  17% (20/112)
+Updating files:  18% (21/112)
+Updating files:  19% (22/112)
+Updating files:  20% (23/112)
+Updating files:  21% (24/112)
+Updating files:  22% (25/112)
+Updating files:  23% (26/112)
+Updating files:  24% (27/112)
+Updating files:  25% (28/112)
+Updating files:  26% (30/112)
+Updating files:  27% (31/112)
+Updating files:  28% (32/112)
+Updating files:  29% (33/112)
+Updating files:  30% (34/112)
+Updating files:  31% (35/112)
+Updating files:  32% (36/112)
+Updating files:  33% (37/112)
+Updating files:  34% (39/112)
+Updating files:  35% (40/112)
+Updating files:  36% (41/112)
+Updating files:  37% (42/112)
+Updating files:  38% (43/112)
+Updating files:  39% (44/112)
+Updating files:  40% (45/112)
+Updating files:  41% (46/112)
+Updating files:  42% (48/112)
+Updating files:  43% (49/112)
+Updating files:  44% (50/112)
+Updating files:  45% (51/112)
+Updating files:  46% (52/112)
+Updating files:  47% (53/112)
+Updating files:  48% (54/112)
+Updating files:  49% (55/112)
+Updating files:  50% (56/112)
+Updating files:  51% (58/112)
+Updating files:  52% (59/112)
+Updating files:  53% (60/112)
+Updating files:  54% (61/112)
+Updating files:  55% (62/112)
+Updating files:  56% (63/112)
+Updating files:  57% (64/112)
+Updating files:  58% (65/112)
+Updating files:  59% (67/112)
+Updating files:  60% (68/112)
+Updating files:  61% (69/112)
+Updating files:  62% (70/112)
+Updating files:  63% (71/112)
+Updating files:  64% (72/112)
+Updating files:  65% (73/112)
+Updating files:  66% (74/112)
+Updating files:  67% (76/112)
+Updating files:  68% (77/112)
+Updating files:  69% (78/112)
+Updating files:  70% (79/112)
+Updating files:  71% (80/112)
+Updating files:  72% (81/112)
+Updating files:  73% (82/112)
+Updating files:  74% (83/112)
+Updating files:  75% (84/112)
+Updating files:  76% (86/112)
+Updating files:  77% (87/112)
+Updating files:  78% (88/112)
+Updating files:  79% (89/112)
+Updating files:  80% (90/112)
+Updating files:  81% (91/112)
+Updating files:  82% (92/112)
+Updating files:  83% (93/112)
+Updating files:  84% (95/112)
+Updating files:  85% (96/112)
+Updating files:  86% (97/112)
+Updating files:  87% (98/112)
+Updating files:  88% (99/112)
+Updating files:  89% (100/112)
+Updating files:  90% (101/112)
+Updating files:  91% (102/112)
+Updating files:  92% (104/112)
+Updating files:  93% (105/112)
+Updating files:  94% (106/112)
+Updating files:  95% (107/112)
+Updating files:  96% (108/112)
+Updating files:  97% (109/112)
+Updating files:  98% (110/112)
+Updating files:  99% (111/112)
+Updating files: 100% (112/112)
+Updating files: 100% (112/112), done.
+Note: switching to 'c4049d1'.
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+  git switch -c <new-branch-name>
+Or undo this operation with:
+  git switch -
+Turn off this advice by setting config variable advice.detachedHead to false
+HEAD is now at c4049d1 [qca-nss-clients] Add error types for wifi mesh
+Generating formal git archive (apply .gitattributes rules)
+Packing checkout...
+make[2]: Leaving directory '/mnt/openwrt/feeds/nss_packages/qca-nss-clients'
+time: package/feeds/nss_packages/qca-nss-clients/download#1.69#0.40#117.67
+Note: switching to '60e27b9'.
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+  git switch -c <new-branch-name>
+Or undo this operation with:
+  git switch -
+Turn off this advice by setting config variable advice.detachedHead to false
+HEAD is now at 60e27b9 [qca-nss-crypto] Linux 6.6 compilation fixes
+Generating formal git archive (apply .gitattributes rules)
+Packing checkout...
+make[2]: Leaving directory '/mnt/openwrt/feeds/nss_packages/qca-nss-crypto'
+time: package/feeds/nss_packages/qca-nss-crypto/download#0.80#0.34#143.82
+Note: switching to '30fbfa4'.
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+  git switch -c <new-branch-name>
+Or undo this operation with:
+  git switch -
+Turn off this advice by setting config variable advice.detachedHead to false
+HEAD is now at 30fbfa4 [qca-nss-ecm] Fix for null dev entries in emesh-sawf.
+Generating formal git archive (apply .gitattributes rules)
+Packing checkout...
+make[2]: Leaving directory '/mnt/openwrt/feeds/nss_packages/qca-nss-ecm'
+time: package/feeds/nss_packages/qca-nss-ecm/download#1.98#0.40#170.47
+make[1]: Leaving directory '/mnt/openwrt'
+make[1]: Entering directory '/mnt/openwrt'
+make[2]: Entering directory '/mnt/openwrt/target/linux'
+make[3]: Entering directory '/mnt/openwrt/target/linux/qualcommax'
+make[3]: Nothing to be done for 'download'.
+make[3]: Leaving directory '/mnt/openwrt/target/linux/qualcommax'
+make[2]: Leaving directory '/mnt/openwrt/target/linux'
+time: target/linux/download#0.02#0.04#0.06
+make[1]: Leaving directory '/mnt/openwrt'
+Download completed, some packages may have failed but will retry during compilation

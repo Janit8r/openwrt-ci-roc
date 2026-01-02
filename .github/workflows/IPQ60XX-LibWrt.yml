@@ -104,13 +104,8 @@ jobs:
         chmod +x $DIY_SCRIPT
         cd $OPENWRT_PATH
         $GITHUB_WORKSPACE/$DIY_SCRIPT
-
-    - name: Download DL Package(下载DL软件包)
-      run: |
-        cat $CONFIG_FILE $GENERAL_CONFIG_FILE > $OPENWRT_PATH/.config
-        cd $OPENWRT_PATH
-        make defconfig
         # 修复NSS固件包的哈希验证问题（由于.gitattributes导致）
+        # 必须在feeds安装后立即执行，确保Makefile存在
         if [ -f "feeds/nss_packages/firmware/nss-firmware/Makefile" ]; then
             sed -i '/PKG_HASH:=/d' feeds/nss_packages/firmware/nss-firmware/Makefile
             echo "NSS firmware hash check disabled"
@@ -131,6 +126,12 @@ jobs:
             sed -i '/PKG_HASH:=/d' feeds/nss_packages/qca-nss-crypto/Makefile
             echo "NSS crypto hash check disabled"
         fi
+
+    - name: Download DL Package(下载DL软件包)
+      run: |
+        cat $CONFIG_FILE $GENERAL_CONFIG_FILE > $OPENWRT_PATH/.config
+        cd $OPENWRT_PATH
+        make defconfig
         # 清理可能损坏的NSS固件缓存
         rm -f dl/nss-firmware-*.tar.zst
         rm -f dl/nss-eip-firmware-*.tar.zst
