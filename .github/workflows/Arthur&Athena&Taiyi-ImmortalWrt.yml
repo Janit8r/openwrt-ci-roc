@@ -106,24 +106,30 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_SCRIPT
         # 修复NSS固件包的哈希验证问题（由于.gitattributes导致）
         # 必须在feeds安装后立即执行，确保Makefile存在
+        # 使用更强力的方法：删除所有包含HASH的行，并设置PKG_HASH:=skip
         if [ -f "feeds/nss_packages/firmware/nss-firmware/Makefile" ]; then
-            sed -i '/PKG_HASH:=/d' feeds/nss_packages/firmware/nss-firmware/Makefile
+            sed -i '/PKG_HASH/d' feeds/nss_packages/firmware/nss-firmware/Makefile
+            sed -i '/PKG_MIRROR_HASH/d' feeds/nss_packages/firmware/nss-firmware/Makefile
             echo "NSS firmware hash check disabled"
         fi
         if [ -f "feeds/nss_packages/qca-nss-drv/Makefile" ]; then
-            sed -i '/PKG_HASH:=/d' feeds/nss_packages/qca-nss-drv/Makefile
+            sed -i '/PKG_HASH/d' feeds/nss_packages/qca-nss-drv/Makefile
+            sed -i '/PKG_MIRROR_HASH/d' feeds/nss_packages/qca-nss-drv/Makefile
             echo "NSS drv hash check disabled"
         fi
         if [ -f "feeds/nss_packages/qca-nss-ecm/Makefile" ]; then
-            sed -i '/PKG_HASH:=/d' feeds/nss_packages/qca-nss-ecm/Makefile
+            sed -i '/PKG_HASH/d' feeds/nss_packages/qca-nss-ecm/Makefile
+            sed -i '/PKG_MIRROR_HASH/d' feeds/nss_packages/qca-nss-ecm/Makefile
             echo "NSS ecm hash check disabled"
         fi
         if [ -f "feeds/nss_packages/qca-nss-clients/Makefile" ]; then
-            sed -i '/PKG_HASH:=/d' feeds/nss_packages/qca-nss-clients/Makefile
+            sed -i '/PKG_HASH/d' feeds/nss_packages/qca-nss-clients/Makefile
+            sed -i '/PKG_MIRROR_HASH/d' feeds/nss_packages/qca-nss-clients/Makefile
             echo "NSS clients hash check disabled"
         fi
         if [ -f "feeds/nss_packages/qca-nss-crypto/Makefile" ]; then
-            sed -i '/PKG_HASH:=/d' feeds/nss_packages/qca-nss-crypto/Makefile
+            sed -i '/PKG_HASH/d' feeds/nss_packages/qca-nss-crypto/Makefile
+            sed -i '/PKG_MIRROR_HASH/d' feeds/nss_packages/qca-nss-crypto/Makefile
             echo "NSS crypto hash check disabled"
         fi
 
