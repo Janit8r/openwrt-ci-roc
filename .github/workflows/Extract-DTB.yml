@@ -1,0 +1,264 @@
+name: Extract DTB from OpenWrt Image
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_url:
+        description: 'OpenWrt image URL or file name'
+        required: true
+        default: 'openwrt-rockchip-ts3200-ext4-sysupgrade-v3.02-a0d7a9ef.img.gz'
+      upload_artifact:
+        description: 'Upload extracted files as artifact'
+        required: false
+        default: 'true'
+
+env:
+  TZ: Asia/Shanghai
+
+jobs:
+  Extract:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - name: Checkout(检出代码)
+      uses: actions/checkout@main
+
+    - name: Initialization Environment(初始化环境)
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        sudo -E apt-get -y update
+        sudo -E apt-get -y install gzip file binwalk device-tree-compiler kpartx util-linux
+        sudo timedatectl set-timezone "$TZ"
+
+    - name: Download Image(下载镜像)
+      run: |
+        mkdir -p workspace
+        cd workspace
+        IMAGE_INPUT="${{ github.event.inputs.image_url }}"
+        
+        # 判断是URL还是文件名
+        if [[ "$IMAGE_INPUT" =~ ^https?:// ]]; then
+          echo "Downloading from URL: $IMAGE_INPUT"
+          wget -O image.img.gz "$IMAGE_INPUT"
+        else
+          echo "Using file name: $IMAGE_INPUT"
+          # 如果是文件名，假设在当前目录或需要从某处下载
+          if [ -f "../$IMAGE_INPUT" ]; then
+            cp "../$IMAGE_INPUT" image.img.gz
+          else
+            echo "Error: File not found"
+            exit 1
+          fi
+        fi
+        
+        echo "IMAGE_FILE=image.img.gz" >> $GITHUB_ENV
+        ls -lh
+
+    - name: Extract Image(解压镜像)
+      run: |
+        cd workspace
+        echo "Extracting gzip archive..."
+        gunzip -k $IMAGE_FILE
+        
+        IMAGE_EXTRACTED="${IMAGE_FILE%.gz}"
+        echo "IMAGE_EXTRACTED=$IMAGE_EXTRACTED" >> $GITHUB_ENV
+        
+        echo "Image file info:"
+        file $IMAGE_EXTRACTED
+        ls -lh $IMAGE_EXTRACTED
+
+    - name: Analyze Image Structure(分析镜像结构)
+      run: |
+        cd workspace
+        echo "=== Image Structure Analysis ==="
+        
+        # 显示分区表
+        echo "Partition table:"
+        fdisk -l $IMAGE_EXTRACTED || true
+        
+        # 使用binwalk分析
+        echo -e "\n=== Binwalk Analysis ==="
+        binwalk $IMAGE_EXTRACTED | tee binwalk_output.txt
+        
+        # 使用file命令
+        echo -e "\n=== File Type ==="
+        file $IMAGE_EXTRACTED
+
+    - name: Mount and Extract Partitions(挂载并提取分区)
+      run: |
+        cd workspace
+        echo "Creating loop device..."
+        
+        # 创建loop设备
+        sudo losetup -fP $IMAGE_EXTRACTED
+        LOOP_DEV=$(losetup -j $IMAGE_EXTRACTED | cut -d: -f1)
+        echo "Loop device: $LOOP_DEV"
+        echo "LOOP_DEV=$LOOP_DEV" >> $GITHUB_ENV
+        
+        # 列出分区
+        echo "Available partitions:"
+        ls -l ${LOOP_DEV}* || true
+        lsblk $LOOP_DEV || true
+        
+        # 创建挂载点
+        mkdir -p boot rootfs extracted
+        
+        # 尝试挂载boot分区（通常是第一个分区）
+        if [ -e "${LOOP_DEV}p1" ]; then
+          echo "Mounting ${LOOP_DEV}p1 to boot/"
+          sudo mount ${LOOP_DEV}p1 boot/ 2>/dev/null || echo "Failed to mount p1"
+        fi
+        
+        # 尝试挂载rootfs分区（通常是第二个分区）
+        if [ -e "${LOOP_DEV}p2" ]; then
+          echo "Mounting ${LOOP_DEV}p2 to rootfs/"
+          sudo mount ${LOOP_DEV}p2 rootfs/ 2>/dev/null || echo "Failed to mount p2"
+        fi
+        
+        # 显示挂载的内容
+        echo -e "\n=== Boot partition contents ==="
+        ls -lah boot/ 2>/dev/null || echo "Boot partition not mounted or empty"
+        
+        echo -e "\n=== Rootfs partition contents (top level) ==="
+        ls -lah rootfs/ 2>/dev/null || echo "Rootfs partition not mounted or empty"
+
+    - name: Extract DTB Files(提取DTB文件)
+      run: |
+        cd workspace
+        echo "=== Searching for DTB files ==="
+        
+        # 在boot分区查找DTB
+        if [ -d "boot" ]; then
+          echo "Searching in boot partition..."
+          sudo find boot/ -name "*.dtb" -exec cp {} extracted/ \; 2>/dev/null || true
+        fi
+        
+        # 在rootfs分区查找DTB
+        if [ -d "rootfs" ]; then
+          echo "Searching in rootfs partition..."
+          sudo find rootfs/ -name "*.dtb" -exec cp {} extracted/ \; 2>/dev/null || true
+          sudo find rootfs/boot -name "*.dtb" -exec cp {} extracted/ \; 2>/dev/null || true
+        fi
+        
+        # 使用binwalk提取DTB
+        echo -e "\n=== Extracting DTB using binwalk ==="
+        binwalk -e --dd="dtb" $IMAGE_EXTRACTED 2>/dev/null || true
+        
+        # 查找binwalk提取的文件
+        if [ -d "_${IMAGE_EXTRACTED}.extracted" ]; then
+          sudo find "_${IMAGE_EXTRACTED}.extracted" -name "*.dtb" -exec cp {} extracted/ \; 2>/dev/null || true
+        fi
+        
+        # 修改权限
+        sudo chown -R $(id -u):$(id -g) extracted/
+        
+        echo -e "\n=== Extracted DTB files ==="
+        ls -lh extracted/
+        
+        # 分析DTB文件
+        if [ -n "$(ls -A extracted/*.dtb 2>/dev/null)" ]; then
+          for dtb in extracted/*.dtb; do
+            echo -e "\n=== Analyzing $dtb ==="
+            file "$dtb"
+            dtc -I dtb -O dts "$dtb" -o "${dtb%.dtb}.dts" 2>/dev/null || echo "Failed to decompile $dtb"
+          done
+        else
+          echo "No DTB files found!"
+        fi
+        
+        # 列出所有提取的文件
+        echo -e "\n=== All extracted files ==="
+        ls -lh extracted/
+
+    - name: Extract Kernel and Other Components(提取内核和其他组件)
+      run: |
+        cd workspace
+        echo "=== Extracting kernel and other components ==="
+        
+        # 使用binwalk提取所有可识别的组件
+        binwalk -e $IMAGE_EXTRACTED || true
+        
+        # 查找内核镜像
+        if [ -d "_${IMAGE_EXTRACTED}.extracted" ]; then
+          echo "Binwalk extracted files:"
+          ls -lh "_${IMAGE_EXTRACTED}.extracted"
+          
+          # 复制有用的文件到extracted目录
+          sudo find "_${IMAGE_EXTRACTED}.extracted" -type f \( -name "*kernel*" -o -name "*zImage*" -o -name "*Image*" \) -exec cp {} extracted/ \; 2>/dev/null || true
+        fi
+        
+        sudo chown -R $(id -u):$(id -g) extracted/
+
+    - name: Create Summary(创建摘要)
+      run: |
+        cd workspace
+        echo "=== Extraction Summary ===" | tee summary.txt
+        echo "" | tee -a summary.txt
+        echo "Image: ${{ github.event.inputs.image_url }}" | tee -a summary.txt
+        echo "Date: $(date)" | tee -a summary.txt
+        echo "" | tee -a summary.txt
+        echo "Extracted files:" | tee -a summary.txt
+        ls -lh extracted/ | tee -a summary.txt
+        echo "" | tee -a summary.txt
+        
+        if [ -f "binwalk_output.txt" ]; then
+          echo "Binwalk analysis:" | tee -a summary.txt
+          cat binwalk_output.txt | tee -a summary.txt
+        fi
+        
+        cat summary.txt
+
+    - name: Cleanup(清理)
+      if: always()
+      run: |
+        cd workspace
+        # 卸载分区
+        if [ -n "$LOOP_DEV" ]; then
+          sudo umount boot/ 2>/dev/null || true
+          sudo umount rootfs/ 2>/dev/null || true
+          sudo losetup -d $LOOP_DEV 2>/dev/null || true
+        fi
+
+    - name: Upload Extracted Files(上传提取的文件)
+      if: github.event.inputs.upload_artifact == 'true'
+      uses: actions/upload-artifact@main
+      with:
+        name: extracted-dtb-$(date +"%Y%m%d")
+        path: |
+          workspace/extracted/
+          workspace/summary.txt
+          workspace/binwalk_output.txt
+
+    - name: Upload to Release(发布到Release)
+      if: github.event.inputs.upload_artifact == 'true'
+      uses: ncipollo/release-action@main
+      with:
+        name: DTB Extraction - $(date +"%Y-%m-%d %H:%M:%S")
+        allowUpdates: true
+        tag: dtb-extraction
+        token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts: workspace/extracted/*
+        body: |
+          ## DTB Extraction Results
+          
+          **Source Image:** ${{ github.event.inputs.image_url }}
+          
+          **Extraction Date:** $(date +"%Y-%m-%d %H:%M:%S")
+          
+          ### Extracted Files
+          
+          This release contains DTB (Device Tree Blob) files and other components extracted from the OpenWrt firmware image.
+          
+          - DTB files: `*.dtb`
+          - Decompiled DTS files: `*.dts`
+          - Other components: kernel, bootloader, etc.
+          
+          ### Usage
+          
+          DTB files can be used for:
+          - Device tree analysis
+          - Hardware configuration reference
+          - Custom firmware development
+          
+          Check the summary.txt for detailed extraction information.
