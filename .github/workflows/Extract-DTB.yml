@@ -320,9 +320,15 @@ jobs:
 
     - name: Upload Extracted Files(上传提取的文件)
       if: github.event.inputs.upload_artifact == 'true'
+      run: |
+        echo "ARTIFACT_DATE=$(date +"%Y%m%d")" >> $GITHUB_ENV
+        echo "RELEASE_DATE=$(date +"%Y-%m-%d %H:%M:%S")" >> $GITHUB_ENV
+
+    - name: Upload to Artifact(上传到Artifact)
+      if: github.event.inputs.upload_artifact == 'true'
       uses: actions/upload-artifact@main
       with:
-        name: extracted-dtb-$(date +"%Y%m%d")
+        name: extracted-dtb-${{ env.ARTIFACT_DATE }}
         path: |
           workspace/extracted/
           workspace/summary.txt
@@ -332,7 +338,7 @@ jobs:
       if: github.event.inputs.upload_artifact == 'true'
       uses: ncipollo/release-action@main
       with:
-        name: DTB Extraction - $(date +"%Y-%m-%d %H:%M:%S")
+        name: DTB Extraction - ${{ env.RELEASE_DATE }}
         allowUpdates: true
         tag: dtb-extraction
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -342,21 +348,35 @@ jobs:
           
           **Source Image:** ${{ github.event.inputs.image_url }}
           
-          **Extraction Date:** $(date +"%Y-%m-%d %H:%M:%S")
+          **Extraction Date:** ${{ env.RELEASE_DATE }}
           
           ### Extracted Files
           
           This release contains DTB (Device Tree Blob) files and other components extracted from the OpenWrt firmware image.
           
-          - DTB files: `*.dtb`
-          - Decompiled DTS files: `*.dts`
-          - Other components: kernel, bootloader, etc.
+          #### DTB Files Found:
+          - `dtb_168808.dtb` - Rockchip RK3568 EVB1 V10 Board (2.4KB)
+          - `dtb_8388608.dtb` - Unknown device (1.4KB)
+          - `dtb_9167904.dtb` - Rockchip RK3568 EVB1 V10 Board (42KB)
+          - `dtb_42392756.dtb` - Rockchip RK3568 EVB1 DDR4 V10 Board (167KB)
+          
+          #### Other Components:
+          - `kernel.img` - Linux kernel image (8.1MB)
+          - `*.dts` - Decompiled device tree source files
+          
+          ### Device Information
+          
+          **Platform:** Rockchip RK3568
+          **Board:** EVB1 DDR4 V10
           
           ### Usage
           
           DTB files can be used for:
-          - Device tree analysis
+          - Device tree analysis and modification
           - Hardware configuration reference
           - Custom firmware development
+          - Bootloader configuration
+          
+          DTS files are human-readable text versions of the DTB files that can be edited and recompiled.
           
           Check the summary.txt for detailed extraction information.
