@@ -175,13 +175,38 @@ jobs:
           sudo find rootfs/boot -name "*.dtb" -exec cp {} extracted/ \; 2>/dev/null || true
         fi
         
-        # 使用binwalk提取DTB
+        # 使用binwalk识别DTB位置
         echo -e "\n=== Extracting DTB using binwalk ==="
-        binwalk -e --dd="dtb" $IMAGE_EXTRACTED 2>/dev/null || true
+        binwalk $IMAGE_EXTRACTED | grep "Flattened device tree" | tee dtb_locations.txt
+        
+        # 手动提取DTB文件
+        echo -e "\n=== Manually extracting DTB files ==="
+        DTB_COUNT=0
+        while IFS= read -r line; do
+          # 提取偏移量和大小
+          OFFSET=$(echo "$line" | awk '{print $1}')
+          SIZE=$(echo "$line" | grep -oP 'size: \K[0-9]+')
+          
+          if [ -n "$OFFSET" ] && [ -n "$SIZE" ]; then
+            DTB_COUNT=$((DTB_COUNT + 1))
+            OUTPUT_FILE="extracted/dtb_${OFFSET}.dtb"
+            echo "Extracting DTB at offset $OFFSET, size $SIZE bytes to $OUTPUT_FILE"
+            dd if=$IMAGE_EXTRACTED of=$OUTPUT_FILE bs=1 skip=$OFFSET count=$SIZE 2>/dev/null
+          fi
+        done < dtb_locations.txt
+        
+        echo "Extracted $DTB_COUNT DTB files"
+        
+        # 也尝试使用binwalk自动提取
+        binwalk -e $IMAGE_EXTRACTED 2>/dev/null || true
         
         # 查找binwalk提取的文件
         if [ -d "_${IMAGE_EXTRACTED}.extracted" ]; then
           sudo find "_${IMAGE_EXTRACTED}.extracted" -name "*.dtb" -exec cp {} extracted/ \; 2>/dev/null || true
+          # 查找可能的DTB文件（没有扩展名的）
+          sudo find "_${IMAGE_EXTRACTED}.extracted" -type f -size +1k -size -200k -exec file {} \; | grep "Device Tree Blob" | cut -d: -f1 | while read dtbfile; do
+            sudo cp "$dtbfile" extracted/$(basename "$dtbfile").dtb 2>/dev/null || true
+          done
         fi
         
         # 修改权限
@@ -195,7 +220,20 @@ jobs:
           for dtb in extracted/*.dtb; do
             echo -e "\n=== Analyzing $dtb ==="
             file "$dtb"
-            dtc -I dtb -O dts "$dtb" -o "${dtb%.dtb}.dts" 2>/dev/null || echo "Failed to decompile $dtb"
+            
+            # 验证DTB文件
+            if file "$dtb" | grep -q "Device Tree Blob"; then
+              echo "Valid DTB file detected"
+              # 反编译DTB为DTS
+              dtc -I dtb -O dts "$dtb" -o "${dtb%.dtb}.dts" 2>/dev/null && echo "Decompiled to ${dtb%.dtb}.dts" || echo "Failed to decompile $dtb"
+              
+              # 提取DTB信息
+              echo "DTB Info:"
+              fdtget "$dtb" / compatible 2>/dev/null || echo "No compatible property found"
+              fdtget "$dtb" / model 2>/dev/null || echo "No model property found"
+            else
+              echo "Warning: $dtb may not be a valid DTB file"
+            fi
           done
         else
           echo "No DTB files found!"
@@ -213,16 +251,42 @@ jobs:
         # 使用binwalk提取所有可识别的组件
         binwalk -e $IMAGE_EXTRACTED || true
         
-        # 查找内核镜像
+        # 查找内核镜像和其他组件
         if [ -d "_${IMAGE_EXTRACTED}.extracted" ]; then
           echo "Binwalk extracted files:"
           ls -lh "_${IMAGE_EXTRACTED}.extracted"
+          
+          # 挂载提取的ext文件系统来查找内核
+          echo -e "\n=== Mounting extracted filesystems ==="
+          for extfs in "_${IMAGE_EXTRACTED}.extracted"/*.ext*; do
+            if [ -f "$extfs" ]; then
+              MOUNT_DIR="mount_$(basename $extfs)"
+              mkdir -p "$MOUNT_DIR"
+              echo "Mounting $extfs to $MOUNT_DIR"
+              sudo mount -o loop,ro "$extfs" "$MOUNT_DIR" 2>/dev/null && {
+                echo "Contents of $extfs:"
+                ls -lah "$MOUNT_DIR"
+                
+                # 查找内核镜像
+                sudo find "$MOUNT_DIR" -type f \( -name "*Image*" -o -name "*vmlinuz*" -o -name "*zImage*" -o -name "*kernel*" \) -exec cp {} extracted/ \; 2>/dev/null || true
+                
+                # 查找DTB文件
+                sudo find "$MOUNT_DIR" -name "*.dtb" -exec cp {} extracted/ \; 2>/dev/null || true
+                
+                sudo umount "$MOUNT_DIR" 2>/dev/null || true
+              } || echo "Failed to mount $extfs"
+            fi
+          done
           
           # 复制有用的文件到extracted目录
           sudo find "_${IMAGE_EXTRACTED}.extracted" -type f \( -name "*kernel*" -o -name "*zImage*" -o -name "*Image*" \) -exec cp {} extracted/ \; 2>/dev/null || true
         fi
         
         sudo chown -R $(id -u):$(id -g) extracted/
+        
+        echo -e "\n=== Final extracted files ==="
+        ls -lh extracted/
+        du -sh extracted/
 
     - name: Create Summary(创建摘要)
       run: |
